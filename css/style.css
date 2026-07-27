@@ -1,25 +1,39 @@
 /* ==========================================
    1. VARIABLES Y CONFIGURACIÓN GLOBAL
-   ================================---------- */
+   ========================================== */
+
 :root {
     --primary: #1a2530;
     --primary-light: #2c3e50;
-    --accent: #c5a059; /* Dorado elegante */
+    --accent: #c5a059;
     --accent-hover: #b08d46;
     --text-main: #333333;
     --text-muted: #666666;
     --bg-light: #f8f9fa;
     --bg-white: #ffffff;
     --border-color: #e2e8f0;
-    
+
     --font-heading: 'Playfair Display', serif;
     --font-sans: 'DM Sans', sans-serif;
-    
+
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+
+    --shadow-sm:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+    --shadow-md:
+        0 10px 25px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+    --shadow-lg:
+        0 20px 35px -10px rgba(0, 0, 0, 0.15);
 }
+
+
+/* ==========================================
+   2. RESET GLOBAL
+   ========================================== */
 
 * {
     margin: 0;
@@ -50,6 +64,11 @@ ul {
     list-style: none;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
     width: 100%;
     max-width: 1280px;
@@ -57,9 +76,11 @@ ul {
     padding: 0 2rem;
 }
 
+
 /* ==========================================
-   2. BOTONES Y COMPONENTES REUTILIZABLES
-   ================================---------- */
+   3. BOTONES Y COMPONENTES
+   ========================================== */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -130,7 +151,7 @@ ul {
     color: var(--primary);
     display: inline-flex;
     align-items: center;
-    gap: 0.5rkm;
+    gap: 0.5rem;
 }
 
 .text-link:hover {
@@ -172,9 +193,11 @@ ul {
     font-size: 1.1rem;
 }
 
+
 /* ==========================================
-   3. HEADER Y NAVEGACIÓN
-   ================================---------- */
+   4. HEADER Y NAVEGACIÓN
+   ========================================== */
+
 .site-header {
     position: fixed;
     top: 0;
@@ -268,9 +291,11 @@ ul {
     cursor: pointer;
 }
 
+
 /* ==========================================
-   4. HERO PRINCIPAL
-   ================================---------- */
+   5. HERO PRINCIPAL
+   ========================================== */
+
 .hero {
     position: relative;
     height: 100vh;
@@ -286,7 +311,11 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(15, 23, 30, 0.85) 0%, rgba(26, 37, 48, 0.6) 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 30, 0.85) 0%,
+        rgba(26, 37, 48, 0.6) 100%
+    );
 }
 
 .hero-content {
@@ -345,131 +374,60 @@ ul {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(6px); }
-    60% { transform: translateY(3px); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(6px);
+    }
+
+    60% {
+        transform: translateY(3px);
+    }
 }
 
 
 /* ==========================================
-   5. BUSCADOR / TRAVEL SEARCH
-========================================== */
+   6. BUSCADOR / TRAVEL SEARCH
+   CORRECCIÓN DEFINITIVA
+   ========================================== */
+
+/*
+   IMPORTANTE:
+   El buscador ya NO se mete 3rem dentro del HERO.
+   Se mantiene ligeramente elevado, pero con una
+   separación visual mucho más limpia.
+*/
 
 .travel-search {
     position: relative;
     margin-top: 0;
     z-index: 10;
-    padding: 3rem 0 5rem 0;
+    padding: 3rem 0 4rem;
     background-color: var(--bg-white);
 }
-    position: relative;
-    margin-top: -3.5rem;
-    z-index: 10;
-    padding-bottom: 1rem;
-}
 
-.search-card {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-    background: rgba(255, 255, 255, 0.97);
-    border-radius: 18px;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 15px 40px rgba(15, 23, 30, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-}
-
-.search-intro {
-    margin-bottom: 1.25rem;
-}
-
-.search-intro .eyebrow {
-    margin-bottom: 0.35rem;
-}
-
-.search-intro h2 {
-    font-family: var(--font-heading);
-    font-size: 1.45rem;
-    color: var(--primary);
-    margin-top: 0;
-}
-
-/* Campos */
-
-.search-fields {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
-    gap: 0.75rem;
-    align-items: end;
-}
-
-.search-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-}
-
-.search-field label {
-    font-size: 0.68rem;
-    font-weight: 700;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.search-field select,
-.search-field input {
-    width: 100%;
-    height: 48px;
-    padding: 0 1rem;
-
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-
-    font-family: var(--font-sans);
-    font-size: 0.88rem;
-
-    color: var(--text-main);
-    background-color: var(--bg-light);
-
-    outline: none;
-
-    transition: var(--transition);
-}
-
-.search-field select:focus,
-.search-field input:focus {
-    border-color: var(--accent);
-    background-color: var(--bg-white);
-
-    box-shadow:
-        0 0 0 3px rgba(197, 160, 89, 0.12);
-}
-
-.search-btn {
-    height: 48px;
-    padding: 0 1.6rem;
-    border-radius: 10px;
-    white-space: nowrap;
-    font-size: 0.85rem;
-}
-    position: relative;
-    margin-top: -5rem;
-    z-index: 10;
-    padding-bottom: 3rem;
-}
+/* Tarjeta */
 
 .search-card {
     background: var(--bg-white);
     border-radius: 20px;
-    padding: 3rem;
+    padding: 2.5rem 3rem;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
 }
 
+
+/* Introducción */
+
 .search-intro {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
 }
 
 .search-intro h2 {
@@ -477,59 +435,164 @@ ul {
     font-size: 1.75rem;
     color: var(--primary);
     margin-top: 0.3rem;
+    line-height: 1.3;
 }
+
+
+/* Campos */
 
 .search-fields {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
-    gap: 1.5rem;
-    align-items: flex-end;
+
+    /*
+       Se reserva espacio real para cada campo.
+       Esto evita que los select se compriman.
+    */
+
+    grid-template-columns:
+        minmax(220px, 1.2fr)
+        minmax(220px, 1.2fr)
+        minmax(190px, 0.9fr)
+        minmax(170px, auto);
+
+    gap: 1.25rem;
+
+    align-items: end;
 }
+
+
+/* Campo individual */
 
 .search-field {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    min-width: 0;
 }
 
+
+/* Labels */
+
 .search-field label {
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
+
+
+/*
+   CONTROLES DEL BUSCADOR
+
+   IMPORTANTE:
+   Aquí eliminamos:
+   overflow: hidden;
+   text-overflow: ellipsis;
+
+   Esas propiedades eran parte del problema.
+*/
 
 .search-field select,
 .search-field input {
+    display: block;
+
     width: 100%;
-    padding: 1rem 1.25rem;
+    min-width: 0;
+
+    height: 52px;
+
+    padding: 0 1rem;
+
     border: 1px solid var(--border-color);
     border-radius: 12px;
+
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    color: var(--text-main);
+    background-color: var(--bg-light);
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+
+/* SELECT */
+
+.search-field select {
+    cursor: pointer;
+
+    /*
+       Permitimos que el navegador maneje
+       correctamente el menú nativo.
+    */
+
+    appearance: auto;
+
+    /*
+       IMPORTANTE:
+       No usar overflow hidden.
+       No usar text-overflow.
+    */
+}
+
+
+/* INPUT DATE */
+
+.search-field input {
+    cursor: pointer;
+}
+
+
+/* Opciones del SELECT */
+
+.search-field select option {
     font-family: var(--font-sans);
     font-size: 0.95rem;
     color: var(--text-main);
-    background-color: var(--bg-light);
-    outline: none;
-    transition: var(--transition);
+    background-color: var(--bg-white);
+    padding: 0.5rem;
 }
+
+
+/* Focus */
 
 .search-field select:focus,
 .search-field input:focus {
     border-color: var(--accent);
+
     background-color: var(--bg-white);
-    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+
+    box-shadow:
+        0 0 0 3px rgba(197, 160, 89, 0.15);
 }
+
+
+/* Botón */
 
 .search-btn {
     height: 52px;
-    padding: 0 2.5rem;
+
+    padding: 0 2rem;
+
     border-radius: 12px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    min-width: 170px;
 }
 
+
 /* ==========================================
-   6. DESTINOS DESTACADOS
-   ================================---------- */
+   7. DESTINOS DESTACADOS
+   ========================================== */
+
 .destination-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -561,13 +624,21 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(15, 23, 30, 0.9) 0%, rgba(15, 23, 30, 0.1) 60%);
+    background: linear-gradient(
+        to top,
+        rgba(15, 23, 30, 0.9) 0%,
+        rgba(15, 23, 30, 0.1) 60%
+    );
     z-index: 1;
     transition: var(--transition);
 }
 
 .destination-card:hover .destination-overlay {
-    background: linear-gradient(to top, rgba(15, 23, 30, 0.95) 0%, rgba(15, 23, 30, 0.3) 70%);
+    background: linear-gradient(
+        to top,
+        rgba(15, 23, 30, 0.95) 0%,
+        rgba(15, 23, 30, 0.3) 70%
+    );
 }
 
 .destination-content {
@@ -605,23 +676,30 @@ ul {
     gap: 0.7rem;
 }
 
-/* Imágenes de destinos (Unsplash optimizadas) */
+
+/* Imágenes */
+
 .destination-europe {
     background: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
 }
+
 .destination-caribbean {
     background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
 }
+
 .destination-asia {
     background: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
 }
+
 .destination-dubai {
     background: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
 }
 
+
 /* ==========================================
-   7. OFERTAS DESTACADAS
-   ================================---------- */
+   8. OFERTAS DESTACADAS
+   ========================================== */
+
 .offers {
     background-color: var(--bg-light);
 }
@@ -669,9 +747,11 @@ ul {
 .offer-turkey {
     background-image: url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80');
 }
+
 .offer-europe {
     background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80');
 }
+
 .offer-dubai {
     background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80');
 }
@@ -715,9 +795,11 @@ ul {
     gap: 0.7rem;
 }
 
+
 /* ==========================================
-   8. EXPERIENCIAS
-   ================================---------- */
+   9. EXPERIENCIAS
+   ========================================== */
+
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -725,7 +807,7 @@ ul {
 }
 
 .experience-card {
-    background: var(--bg-white);
+    background-color: var(--bg-white);
     border: 1px solid var(--border-color);
     padding: 2.5rem 2rem;
     border-radius: 16px;
@@ -740,7 +822,6 @@ ul {
     border-color: var(--accent);
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
-    background-color: var(--bg-white);
 }
 
 .experience-icon {
@@ -774,9 +855,11 @@ ul {
     font-size: 0.9rem;
 }
 
+
 /* ==========================================
-   9. SECCIÓN "DISEÑA TU VIAJE" (PLAN SECTION)
-   ================================---------- */
+   10. DISEÑA TU VIAJE
+   ========================================== */
+
 .plan-section {
     position: relative;
     padding: 8rem 0;
@@ -822,9 +905,11 @@ ul {
     font-weight: 300;
 }
 
+
 /* ==========================================
-   10. ¿POR QUÉ GALERÍA DE VIAJES? (WHY US)
-   ================================---------- */
+   11. POR QUÉ GALERÍA DE VIAJES
+   ========================================== */
+
 .why-us {
     background-color: var(--bg-white);
 }
@@ -869,9 +954,225 @@ ul {
     font-size: 0.9rem;
 }
 
+
 /* ==========================================
-   11. CTA FINAL
-   ================================---------- */
+   12. ALIADOS / PARTNERS
+   ========================================== */
+
+.partners-section {
+    background-color: var(--bg-white);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.partners-section .section-header {
+    margin-bottom: 3rem;
+}
+
+.partners-section .section-header h2 {
+    max-width: 700px;
+}
+
+.partners-section .section-header p {
+    max-width: 650px;
+}
+
+
+/*
+   CONTENEDOR DEL SLIDER
+
+   Desktop:
+   - Todos los aliados visibles si caben.
+
+   Mobile:
+   - Se habilita desplazamiento horizontal.
+   - Se evita que desaparezcan los demás logos.
+*/
+
+.partners-slider {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1.5rem 0 2rem;
+
+    /*
+       Scroll suave en móvil
+    */
+    scroll-behavior: smooth;
+
+    /*
+       Ocultar scrollbar visualmente
+       pero mantener capacidad de desplazamiento.
+    */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Scrollbar Chrome / Edge / Safari */
+
+.partners-slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.partners-slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.partners-slider::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 10px;
+}
+
+
+/*
+   Degradados laterales
+*/
+
+.partners-slider::before,
+.partners-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: calc(100% - 2rem);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.partners-slider::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        var(--bg-white),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+.partners-slider::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        var(--bg-white),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+
+/*
+   TRACK
+
+   En desktop se centra.
+
+   En móvil mantiene todos los elementos
+   en una sola línea para permitir desplazamiento.
+*/
+
+.partners-track {
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+
+    width: max-content;
+
+    margin: 0 auto;
+
+    padding: 0 1rem;
+}
+
+
+/*
+   LOGO INDIVIDUAL
+*/
+
+.partner-logo {
+    flex: 0 0 180px;
+
+    width: 180px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background-color: var(--bg-white);
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    transition: var(--transition);
+}
+
+
+/*
+   IMAGEN DEL LOGO
+*/
+
+.partner-logo img {
+    max-width: 150px;
+    max-height: 65px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    filter: grayscale(100%);
+    opacity: 0.65;
+
+    transition: var(--transition);
+}
+
+
+/*
+   HOVER
+*/
+
+.partner-logo:hover {
+    border-color: var(--border-color);
+
+    box-shadow: var(--shadow-sm);
+
+    transform: translateY(-4px);
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+
+/*
+   TEXTO INFERIOR
+*/
+
+.partners-note {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.partners-note span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* ==========================================
+   13. CTA FINAL
+   ========================================== */
+
 .final-cta {
     background-color: var(--primary);
     color: var(--bg-white);
@@ -896,9 +1197,11 @@ ul {
     margin-bottom: 2.5rem;
 }
 
+
 /* ==========================================
-   12. FOOTER
-   ================================---------- */
+   14. FOOTER
+   ========================================== */
+
 .site-footer {
     background-color: #0f171e;
     color: rgba(255, 255, 255, 0.7);
@@ -949,24 +1252,35 @@ ul {
     color: rgba(255, 255, 255, 0.5);
 }
 
+
 /* ==========================================
-   13. WHATSAPP FLOTANTE
-   ================================---------- */
+   15. WHATSAPP FLOTANTE
+   ========================================== */
+
 .whatsapp-btn {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
+
     background-color: #25d366;
     color: white;
+
     padding: 0.75rem 1.25rem;
+
     border-radius: 50px;
+
     font-weight: 600;
     font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+
+    box-shadow:
+        0 4px 15px rgba(37, 211, 102, 0.4);
+
     z-index: 999;
+
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
     transition: var(--transition);
 }
 
@@ -976,16 +1290,58 @@ ul {
     color: white;
 }
 
+
 /* ==========================================
-   14. RESPONSIVE DESIGN (MEDIA QUERIES)
-   ================================---------- */
+   16. LOGO OFICIAL
+   ========================================== */
+
+.logo-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.site-logo-img {
+    height: 85px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ==========================================
+   17. RESPONSIVE - TABLETS
+   ========================================== */
+
+@media (max-width: 1100px) {
+
+    .search-card {
+        padding: 2rem;
+    }
+
+    /*
+       En pantallas medianas:
+       2 columnas para evitar compresión.
+    */
+
+    .search-fields {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+}
+
+
 @media (max-width: 1024px) {
+
     .destination-grid,
     .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
         height: auto;
     }
-    
+
     .destination-card {
         height: 350px;
     }
@@ -998,236 +1354,618 @@ ul {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
+
+    /*
+       En tablet, los aliados siguen siendo
+       desplazables horizontalmente.
+    */
+
+    .partners-track {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
+
+/* ==========================================
+   18. RESPONSIVE - MÓVILES
+   ========================================== */
+
 @media (max-width: 768px) {
+
+    /*
+       CONTENEDOR GENERAL
+    */
+
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+
+    /*
+       HEADER
+    */
+
+    .nav-container {
+        height: 75px;
+    }
+
     .main-nav {
-        display: none; /* Se activará con JS posteriormente */
+        display: none;
     }
 
     .mobile-menu-btn {
         display: block;
     }
 
+    .site-logo-img {
+        height: 65px;
+        max-width: 180px;
+    }
+
+
+    /*
+       HERO
+    */
+
+    .hero {
+        min-height: 650px;
+        height: 85vh;
+    }
+
+    .hero-content {
+        margin-top: 2rem;
+    }
+
     .hero-content h1 {
         font-size: 2.75rem;
     }
 
-    .search-fields {
-        grid-template-columns: 1fr;
+    .hero-content p {
+        font-size: 1rem;
     }
 
-    .destination-grid,
-    .offers-grid,
-    .experience-grid,
-    .benefits-grid {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    /*
+       BUSCADOR
+
+       En móvil dejamos de superponerlo
+       sobre la imagen.
+
+       Esto evita que se descuadre.
+    */
+
+    .travel-search {
+        margin-top: 0;
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .search-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .search-intro {
+        margin-bottom: 1.5rem;
+    }
+
+    .search-intro h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-fields {
+        display: grid;
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .search-field label {
+        font-size: 0.72rem;
+    }
+
+    .search-field select,
+    .search-field input {
+        width: 100%;
+        height: 50px;
+        font-size: 0.95rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .search-btn {
+        width: 100%;
+        height: 50px;
+        min-width: 0;
+    }
+
+
+    /*
+       SECCIONES
+    */
+
+    .section {
+        padding: 5rem 0;
     }
 
     .section-header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 1rem;
+        margin-bottom: 3rem;
+        text-align: center;
     }
 
-    .footer-grid {
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+
+
+    /*
+       DESTINOS
+    */
+
+    .destination-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        height: auto;
     }
-}
 
-/* ==========================================
-   ESTILOS PARA EL LOGO OFICIAL
-   ========================================== */
-.logo-brand {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.site-logo-img {
-    height: 85px; /* Ajusta este valor según el tamaño óptimo visual en tu barra */
-    width: auto;
-    object-fit: contain;
-    display: block;
-}
+    .destination-card {
+        height: 350px;
+    }
 
 
-/* ==========================================
-   15. ALIADOS Y REPRESENTACIONES
-========================================== */
+    /*
+       OFERTAS
+    */
 
-.partners-section {
-    background-color: var(--bg-white);
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    border-top: 1px solid var(--border-color);
-}
-
-.partners-section .section-header {
-    margin-bottom: 3rem;
-}
-
-.partners-section .section-header h2 {
-    max-width: 700px;
-}
-
-.partners-section .section-header p {
-    max-width: 650px;
-}
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
 
 
-/* Contenedor del slider */
+    /*
+       EXPERIENCIAS
+    */
 
-.partners-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding: 1.5rem 0;
-}
-
-
-/* Efecto degradado en los extremos */
-
-.partners-slider::before,
-.partners-slider::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.partners-slider::before {
-    left: 0;
-    background: linear-gradient(
-        to right,
-        var(--bg-white),
-        rgba(255, 255, 255, 0)
-    );
-}
-
-.partners-slider::after {
-    right: 0;
-    background: linear-gradient(
-        to left,
-        var(--bg-white),
-        rgba(255, 255, 255, 0)
-    );
-}
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
 
 
-/* Track */
+    /*
+       BENEFICIOS
+    */
 
-.partners-track {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    width: max-content;
-    margin: 0 auto;
-}
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
 
 
-/* Logo individual */
+    /*
+       PLAN
+    */
 
-.partner-logo {
-    width: 180px;
-    height: 90px;
+    .plan-section {
+        padding: 6rem 1.25rem;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 1rem;
-
-    background-color: var(--bg-white);
-
-    border: 1px solid transparent;
-
-    border-radius: 12px;
-
-    transition: var(--transition);
-}
+    .plan-content h2 {
+        font-size: 2.4rem;
+    }
 
 
-/* Imagen */
+    /*
+       ALIADOS
 
-.partner-logo img {
-    max-width: 150px;
-    max-height: 65px;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
-
-    filter: grayscale(100%);
-    opacity: 0.65;
-
-    transition: var(--transition);
-}
-
-
-/* Hover */
-
-.partner-logo:hover {
-    border-color: var(--border-color);
-
-    box-shadow: var(--shadow-sm);
-
-    transform: translateY(-4px);
-}
-
-
-.partner-logo:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-
-/* Texto inferior */
-
-.partners-note {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.partners-note span {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-
-    text-transform: uppercase;
-
-    letter-spacing: 1.5px;
-}
-
-
-/* ==========================================
-   RESPONSIVE PARTNERS
-========================================== */
-
-@media (max-width: 768px) {
+       IMPORTANTE:
+       Se mantiene una sola fila horizontal.
+       El usuario puede deslizar con el dedo
+       para ver TODOS los aliados.
+    */
 
     .partners-section {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
 
+    .partners-slider {
+        width: calc(100% + 2.5rem);
+        margin-left: -1.25rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        /*
+           Evita que el gesto de desplazamiento
+           horizontal interfiera demasiado
+           con el scroll vertical.
+        */
+
+        touch-action: pan-x pan-y;
+    }
+
     .partners-track {
-        gap: 1.5rem;
+        justify-content: flex-start;
+
+        gap: 1rem;
+
+        width: max-content;
+
+        margin: 0;
+
+        padding-left: 0.5rem;
+        padding-right: 1.5rem;
     }
 
     .partner-logo {
-        width: 150px;
+        flex: 0 0 155px;
+
+        width: 155px;
+        height: 85px;
+
+        padding: 0.75rem;
+    }
+
+    .partner-logo img {
+        max-width: 125px;
+        max-height: 55px;
+    }
+
+    /*
+       Ocultamos los degradados en móvil.
+       Así se ve claramente que hay más logos
+       hacia la derecha.
+    */
+
+    .partners-slider::before,
+    .partners-slider::after {
+        display: none;
+    }
+
+    .partners-note {
+        padding: 0 1rem;
+    }
+
+
+    /*
+       CTA
+    */
+
+    .final-cta {
+        padding: 5rem 1.25rem;
+    }
+
+    .final-cta h2 {
+        font-size: 2.2rem;
+    }
+
+
+    /*
+       FOOTER
+    */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+
+    /*
+       WHATSAPP
+    */
+
+    .whatsapp-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* ==========================================
+   19. RESPONSIVE - TELÉFONOS PEQUEÑOS
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.35rem;
+    }
+
+    .search-card {
+        padding: 1.25rem;
+    }
+
+    .search-intro h2 {
+        font-size: 1.4rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .destination-card {
+        height: 320px;
+        padding: 1.5rem;
+    }
+
+    .destination-content h3 {
+        font-size: 1.75rem;
+    }
+
+    .partner-logo {
+        flex: 0 0 145px;
+        width: 145px;
         height: 80px;
     }
 
     .partner-logo img {
-        max-width: 120px;
-        max-height: 55px;
+        max-width: 115px;
+        max-height: 50px;
+    }
+}
+
+
+/* ==========================================
+   AJUSTES FINALES PARA MÓVIL
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    /* ======================================
+       BUSCADOR
+       ====================================== */
+
+    .travel-search {
+        margin-top: 0;
+        padding: 2rem 0 3rem;
     }
 
+    .search-card {
+        width: 100%;
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .search-fields {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .search-field {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .search-field label {
+        font-size: 0.72rem;
+        letter-spacing: 0.8px;
+    }
+
+    /*
+       Importante:
+       El select debe tener suficiente espacio
+       para mostrar el texto completo.
+    */
+
+    .search-field select,
+    .search-field input {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        height: 52px;
+
+        padding: 0 0.9rem;
+
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        font-weight: 500;
+
+        line-height: normal;
+
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+
+        color: var(--text-main);
+        background-color: var(--bg-light);
+    }
+
+    /*
+       Las opciones del menú.
+       Esto ayuda en navegadores que permiten
+       aplicar estilos al dropdown nativo.
+    */
+
+    .search-field select option {
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        color: var(--text-main);
+        background-color: #ffffff;
+    }
+
+    .search-btn {
+        width: 100%;
+        height: 52px;
+        margin-top: 0.25rem;
+    }
+
+
+    /* ======================================
+       ALIADOS EN MÓVIL
+       GRID COMPACTO DE 2 COLUMNAS
+       ====================================== */
+
+    .partners-slider {
+        width: 100%;
+        overflow: visible;
+        padding: 0.5rem 0;
+    }
+
+    .partners-track {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 0.75rem;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .partner-logo {
+        width: 100%;
+        min-width: 0;
+
+        height: 70px;
+
+        padding: 0.5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 10px;
+
+        background-color: var(--bg-white);
+
+        border: 1px solid var(--border-color);
+
+        box-shadow: none;
+    }
+
+    .partner-logo img {
+        display: block;
+
+        max-width: 90px;
+        max-height: 42px;
+
+        width: auto;
+        height: auto;
+
+        object-fit: contain;
+
+        filter: grayscale(100%);
+        opacity: 0.75;
+    }
+
+    .partner-logo:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    /*
+       Quitamos los degradados laterales
+       porque ya no existe desplazamiento horizontal.
+    */
+
+    .partners-slider::before,
+    .partners-slider::after {
+        display: none;
+    }
+
+    .partners-note {
+        margin-top: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .partners-note span {
+        font-size: 0.65rem;
+        line-height: 1.5;
+    }
+}
+
+
+/* ==========================================
+   CELULARES PEQUEÑOS
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+
+    /* BUSCADOR */
+
+    .travel-search {
+        padding: 1.5rem 0 2.5rem;
+    }
+
+    .search-card {
+        padding: 1.25rem;
+        border-radius: 14px;
+    }
+
+    .search-intro h2 {
+        font-size: 1.35rem;
+    }
+
+    .search-field select,
+    .search-field input {
+        height: 50px;
+        font-size: 0.9rem;
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+
+
+    /* ALIADOS */
+
+    .partners-track {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .partner-logo {
+        height: 65px;
+        padding: 0.4rem;
+    }
+
+    .partner-logo img {
+        max-width: 80px;
+        max-height: 38px;
+    }
 }
