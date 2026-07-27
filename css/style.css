@@ -350,14 +350,18 @@ ul {
     60% { transform: translateY(3px); }
 }
 
-/* ==========================================
-   5. BUSCADOR / TRAVEL SEARCH
-   ================================---------- */
+
 /* ==========================================
    5. BUSCADOR / TRAVEL SEARCH
 ========================================== */
 
 .travel-search {
+    position: relative;
+    margin-top: 0;
+    z-index: 10;
+    padding: 3rem 0 5rem 0;
+    background-color: var(--bg-white);
+}
     position: relative;
     margin-top: -3.5rem;
     z-index: 10;
