@@ -1,0 +1,1133 @@
+/* ==========================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ================================---------- */
+:root {
+    --primary: #1a2530;
+    --primary-light: #2c3e50;
+    --accent: #c5a059; /* Dorado elegante */
+    --accent-hover: #b08d46;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-sans: 'DM Sans', sans-serif;
+    
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-main);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ==========================================
+   2. BOTONES Y COMPONENTES REUTILIZABLES
+   ================================---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 2rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-light {
+    background-color: var(--bg-white);
+    color: var(--primary);
+}
+
+.btn-light:hover {
+    background-color: var(--accent);
+    color: var(--bg-white);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    background-color: transparent;
+    color: var(--bg-white);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--bg-white);
+    color: var(--primary);
+    border-color: var(--bg-white);
+    transform: translateY(-2px);
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+}
+
+.eyebrow.dark {
+    color: var(--accent);
+}
+
+.text-link {
+    font-weight: 600;
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rkm;
+}
+
+.text-link:hover {
+    color: var(--accent);
+    gap: 0.8rem;
+}
+
+.section {
+    padding: 7rem 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+}
+
+.section-header.centered {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    color: var(--primary);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+/* ==========================================
+   3. HEADER Y NAVEGACIÓN
+   ================================---------- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(26, 37, 48, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-main {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--bg-white);
+}
+
+.logo-sub {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.main-nav {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.main-nav a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+
+.main-nav a:hover {
+    color: var(--bg-white);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.nav-cta {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.9rem;
+    background-color: var(--accent);
+    color: var(--bg-white);
+}
+
+.nav-cta:hover {
+    background-color: var(--bg-white);
+    color: var(--primary);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--bg-white);
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+
+/* ==========================================
+   4. HERO PRINCIPAL
+   ================================---------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 23, 30, 0.85) 0%, rgba(26, 37, 48, 0.6) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--bg-white);
+    max-width: 800px;
+    margin-top: 4rem;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-scroll span {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(6px); }
+    60% { transform: translateY(3px); }
+}
+
+/* ==========================================
+   5. BUSCADOR / TRAVEL SEARCH
+   ================================---------- */
+.travel-search {
+    position: relative;
+    margin-top: -5rem;
+    z-index: 10;
+    padding-bottom: 3rem;
+}
+
+.search-card {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.search-intro {
+    margin-bottom: 2rem;
+}
+
+.search-intro h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-top: 0.3rem;
+}
+
+.search-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.search-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.search-field select,
+.search-field input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-field select:focus,
+.search-field input:focus {
+    border-color: var(--accent);
+    background-color: var(--bg-white);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+
+.search-btn {
+    height: 52px;
+    padding: 0 2.5rem;
+    border-radius: 12px;
+}
+
+/* ==========================================
+   6. DESTINOS DESTACADOS
+   ================================---------- */
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    height: 480px;
+}
+
+.destination-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.destination-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.destination-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(15, 23, 30, 0.9) 0%, rgba(15, 23, 30, 0.1) 60%);
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.destination-card:hover .destination-overlay {
+    background: linear-gradient(to top, rgba(15, 23, 30, 0.95) 0%, rgba(15, 23, 30, 0.3) 70%);
+}
+
+.destination-content {
+    position: relative;
+    z-index: 2;
+    color: var(--bg-white);
+}
+
+.destination-content span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+.destination-content h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin: 0.3rem 0 0.8rem 0;
+    font-weight: 600;
+}
+
+.destination-content a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.destination-card:hover .destination-content a {
+    color: var(--accent);
+    gap: 0.7rem;
+}
+
+/* Imágenes de destinos (Unsplash optimizadas) */
+.destination-europe {
+    background: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+}
+.destination-caribbean {
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+}
+.destination-asia {
+    background: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+}
+.destination-dubai {
+    background: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+}
+
+/* ==========================================
+   7. OFERTAS DESTACADAS
+   ================================---------- */
+.offers {
+    background-color: var(--bg-light);
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.offer-card {
+    background: var(--bg-white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.offer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.offer-image {
+    height: 240px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.offer-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--accent);
+    color: var(--bg-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+
+.offer-turkey {
+    background-image: url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80');
+}
+.offer-europe {
+    background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80');
+}
+.offer-dubai {
+    background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80');
+}
+
+.offer-content {
+    padding: 2rem;
+}
+
+.offer-location {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.offer-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin: 0.4rem 0 0.8rem 0;
+}
+
+.offer-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.offer-link {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.offer-link:hover {
+    color: var(--accent);
+    gap: 0.7rem;
+}
+
+/* ==========================================
+   8. EXPERIENCIAS
+   ================================---------- */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.experience-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-white);
+}
+
+.experience-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+    transition: var(--transition);
+}
+
+.experience-card:hover .experience-icon {
+    background-color: var(--accent);
+    color: var(--bg-white);
+}
+
+.experience-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.experience-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   9. SECCIÓN "DISEÑA TU VIAJE" (PLAN SECTION)
+   ================================---------- */
+.plan-section {
+    position: relative;
+    padding: 8rem 0;
+    background: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+    text-align: center;
+    color: var(--bg-white);
+}
+
+.plan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 30, 0.75);
+}
+
+.plan-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.plan-content h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+}
+
+.plan-content h2 span {
+    display: block;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.plan-content p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* ==========================================
+   10. ¿POR QUÉ GALERÍA DE VIAJES? (WHY US)
+   ================================---------- */
+.why-us {
+    background-color: var(--bg-white);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.benefit {
+    padding: 2rem;
+    border-radius: 16px;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.benefit:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--accent);
+}
+
+.benefit-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.benefit h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.benefit p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   11. CTA FINAL
+   ================================---------- */
+.final-cta {
+    background-color: var(--primary);
+    color: var(--bg-white);
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.final-cta .container {
+    max-width: 700px;
+}
+
+.final-cta h2 {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    margin: 0.5rem 0 1rem 0;
+    font-weight: 600;
+}
+
+.final-cta p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+}
+
+/* ==========================================
+   12. FOOTER
+   ================================---------- */
+.site-footer {
+    background-color: #0f171e;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5rem 0 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    max-width: 300px;
+}
+
+.footer-column h4 {
+    font-family: var(--font-heading);
+    color: var(--bg-white);
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-column a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-column a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================
+   13. WHATSAPP FLOTANTE
+   ================================---------- */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #25d366;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.05);
+    background-color: #20ba5a;
+    color: white;
+}
+
+/* ==========================================
+   14. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ================================---------- */
+@media (max-width: 1024px) {
+    .destination-grid,
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+    }
+    
+    .destination-card {
+        height: 350px;
+    }
+
+    .offers-grid,
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Se activará con JS posteriormente */
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.75rem;
+    }
+
+    .search-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-grid,
+    .offers-grid,
+    .experience-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* ==========================================
+   ESTILOS PARA EL LOGO OFICIAL
+   ========================================== */
+.logo-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.site-logo-img {
+    height: 85px; /* Ajusta este valor según el tamaño óptimo visual en tu barra */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ==========================================
+   15. ALIADOS Y REPRESENTACIONES
+========================================== */
+
+.partners-section {
+    background-color: var(--bg-white);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.partners-section .section-header {
+    margin-bottom: 3rem;
+}
+
+.partners-section .section-header h2 {
+    max-width: 700px;
+}
+
+.partners-section .section-header p {
+    max-width: 650px;
+}
+
+
+/* Contenedor del slider */
+
+.partners-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 1.5rem 0;
+}
+
+
+/* Efecto degradado en los extremos */
+
+.partners-slider::before,
+.partners-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.partners-slider::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        var(--bg-white),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+.partners-slider::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        var(--bg-white),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+
+/* Track */
+
+.partners-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    width: max-content;
+    margin: 0 auto;
+}
+
+
+/* Logo individual */
+
+.partner-logo {
+    width: 180px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background-color: var(--bg-white);
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    transition: var(--transition);
+}
+
+
+/* Imagen */
+
+.partner-logo img {
+    max-width: 150px;
+    max-height: 65px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    filter: grayscale(100%);
+    opacity: 0.65;
+
+    transition: var(--transition);
+}
+
+
+/* Hover */
+
+.partner-logo:hover {
+    border-color: var(--border-color);
+
+    box-shadow: var(--shadow-sm);
+
+    transform: translateY(-4px);
+}
+
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+
+/* Texto inferior */
+
+.partners-note {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.partners-note span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* ==========================================
+   RESPONSIVE PARTNERS
+========================================== */
+
+@media (max-width: 768px) {
+
+    .partners-section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .partners-track {
+        gap: 1.5rem;
+    }
+
+    .partner-logo {
+        width: 150px;
+        height: 80px;
+    }
+
+    .partner-logo img {
+        max-width: 120px;
+        max-height: 55px;
+    }
+
+}
