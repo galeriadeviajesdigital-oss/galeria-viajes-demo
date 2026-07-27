@@ -1,867 +1,419 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Galería de Viajes - Diseñamos experiencias de viaje únicas y personalizadas.">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Galería de Viajes | Tu próximo viaje comienza aquí</title>
+    <meta
+        name="description"
+        content="Galería de Viajes - Diseñamos experiencias de viaje únicas y personalizadas."
+    >
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>
+        Galería de Viajes | Tu próximo viaje comienza aquí
+    </title>
+
+    <!-- =========================
+         CSS PRINCIPAL
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
 
-    <header class="site-header">
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-        <div class="container nav-container">
+<header class="site-header">
 
-            <a href="index.html" class="logo-brand">
-    <img src="https://www.galeriadeviajes.com/files/2/images/logotop.png" alt="Galería de Viajes" class="site-logo-img">
-</a>
+    <div class="container nav-container">
 
-            <nav class="main-nav">
+        <!-- LOGO -->
 
-                <a href="#destinos">Destinos</a>
+        <a
+            href="index.html"
+            class="logo-brand"
+        >
 
-                <a href="#experiencias">Experiencias</a>
+            <img
+                src="https://www.galeriadeviajes.com/files/2/images/logotop.png"
+                alt="Galería de Viajes"
+                class="site-logo-img"
+            >
 
-                <a href="#ofertas">Ofertas</a>
+        </a>
 
-                <a href="#planifica">Planifica tu viaje</a>
 
-                <a href="#nosotros">Nosotros</a>
+        <!-- NAVEGACIÓN -->
 
-            </nav>
+        <nav
+            class="main-nav"
+            id="mainNav"
+        >
 
-            <a href="#planifica" class="btn btn-primary nav-cta">
-                Cotiza tu viaje
+            <a href="#destinos">
+                Destinos
             </a>
 
-            <button class="mobile-menu-btn" aria-label="Abrir menú">
-                ☰
-            </button>
+            <a href="#experiencias">
+                Experiencias
+            </a>
+
+            <a href="#ofertas">
+                Ofertas
+            </a>
+
+            <a href="#planifica">
+                Planifica tu viaje
+            </a>
+
+            <a href="#nosotros">
+                Nosotros
+            </a>
+
+            <a href="#aliados">
+                Aliados
+            </a>
+
+        </nav>
+
+
+        <!-- CTA -->
+
+        <a
+            href="#planifica"
+            class="btn btn-primary nav-cta"
+        >
+
+            Cotiza tu viaje
+
+        </a>
+
+
+        <!-- MENÚ MÓVIL -->
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Abrir menú"
+            type="button"
+        >
+
+            ☰
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+====================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <!-- OVERLAY -->
+
+    <div class="hero-overlay"></div>
+
+
+    <!-- CONTENIDO -->
+
+    <div class="container hero-content">
+
+        <span class="eyebrow">
+
+            VIAJES QUE SE CONVIERTEN EN RECUERDOS
+
+        </span>
+
+
+        <h1>
+
+            Tu próximo gran viaje
+
+            <span>
+                comienza aquí.
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Diseñamos experiencias únicas y personalizadas
+            para que descubras el mundo a tu manera.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#destinos"
+                class="btn btn-light"
+            >
+
+                Explorar destinos
+
+            </a>
+
+
+            <a
+                href="#planifica"
+                class="btn btn-outline-light"
+            >
+
+                Diseña tu viaje
+
+            </a>
 
         </div>
 
-    </header>
+    </div>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <!-- SCROLL -->
 
-    <main>
+    <div class="hero-scroll">
 
-        <section class="hero">
+        <span>
+            DESCUBRE MÁS
+        </span>
 
-            <div class="hero-overlay"></div>
+        <span>
+            ↓
+        </span>
 
-            <div class="container hero-content">
+    </div>
 
-                <span class="eyebrow">
-                    VIAJES QUE SE CONVIERTEN EN RECUERDOS
-                </span>
+</section>
 
-                <h1>
-                    Tu próximo gran viaje
-                    <span>comienza aquí.</span>
-                </h1>
 
-                <p>
-                    Diseñamos experiencias únicas y personalizadas
-                    para que descubras el mundo a tu manera.
-                </p>
 
-                <div class="hero-buttons">
+<!-- =====================================================
+     BUSCADOR DE VIAJES
+====================================================== -->
 
-                    <a href="#destinos" class="btn btn-light">
-                        Explorar destinos
-                    </a>
-
-                    <a href="#planifica" class="btn btn-outline-light">
-                        Diseña tu viaje
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-scroll">
-                Descubre más
-                <span>↓</span>
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             TRAVEL SEARCH
-        ========================== -->
-
-        <section class="travel-search">
-
-            <div class="container">
-
-                <div class="search-card">
-
-                    <div class="search-intro">
-
-                        <span class="eyebrow dark">
-                            ENCUENTRA TU PRÓXIMA EXPERIENCIA
-                        </span>
-
-                        <h2>
-                            ¿Qué tipo de viaje estás buscando?
-                        </h2>
-
-                    </div>
-
-                    <div class="search-fields">
-
-                        <div class="search-field">
-
-                            <label>Destino</label>
-
-                            <select id="destinationSelect">
-
-                                <option value="">
-                                    ¿A dónde quieres ir?
-                                </option>
-
-                                <option value="europa">
-                                    Europa
-                                </option>
-
-                                <option value="america">
-                                    América
-                                </option>
-
-                                <option value="asia">
-                                    Asia
-                                </option>
-
-                                <option value="medio-oriente">
-                                    Medio Oriente
-                                </option>
-
-                                <option value="africa">
-                                    África
-                                </option>
-
-                                <option value="caribe">
-                                    Caribe
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="search-field">
-
-                            <label>Experiencia</label>
-
-                            <select id="experienceSelect">
-
-                                <option value="">
-                                    ¿Qué quieres vivir?
-                                </option>
-
-                                <option value="playa">
-                                    Playa
-                                </option>
-
-                                <option value="aventura">
-                                    Aventura
-                                </option>
-
-                                <option value="cultura">
-                                    Cultura
-                                </option>
-
-                                <option value="gastronomia">
-                                    Gastronomía
-                                </option>
-
-                                <option value="naturaleza">
-                                    Naturaleza
-                                </option>
-
-                                <option value="luna-de-miel">
-                                    Luna de miel
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="search-field">
-
-                            <label>Fecha aproximada</label>
-
-                            <input
-                                type="month"
-                                id="travelDate"
-                            >
-
-                        </div>
-
-
-                        <button
-                            class="btn btn-primary search-btn"
-                            id="searchTravelBtn"
-                        >
-                            Explorar viajes
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             DESTINATIONS
-        ========================== -->
-
-        <section class="section destinations" id="destinos">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div>
-
-                        <span class="eyebrow dark">
-                            INSPÍRATE
-                        </span>
-
-                        <h2>
-                            Destinos que esperan por ti
-                        </h2>
-
-                    </div>
-
-                    <a href="#" class="text-link">
-                        Ver todos los destinos →
-                    </a>
-
-                </div>
-
-
-                <div class="destination-grid">
-
-
-                    <article class="destination-card destination-europe">
-
-                        <div class="destination-overlay"></div>
-
-                        <div class="destination-content">
-
-                            <span>DESCUBRE</span>
-
-                            <h3>Europa</h3>
-
-                            <a href="#">
-                                Explorar destino →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="destination-card destination-caribbean">
-
-                        <div class="destination-overlay"></div>
-
-                        <div class="destination-content">
-
-                            <span>RELÁJATE</span>
-
-                            <h3>Caribe</h3>
-
-                            <a href="#">
-                                Explorar destino →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="destination-card destination-asia">
-
-                        <div class="destination-overlay"></div>
-
-                        <div class="destination-content">
-
-                            <span>AVENTÚRATE</span>
-
-                            <h3>Asia</h3>
-
-                            <a href="#">
-                                Explorar destino →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="destination-card destination-dubai">
-
-                        <div class="destination-overlay"></div>
-
-                        <div class="destination-content">
-
-                            <span>VIVE</span>
-
-                            <h3>Medio Oriente</h3>
-
-                            <a href="#">
-                                Explorar destino →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             OFFERS
-        ========================== -->
-
-        <section class="section offers" id="ofertas">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div>
-
-                        <span class="eyebrow dark">
-                            INSPÍRATE Y VIAJA
-                        </span>
-
-                        <h2>
-                            Ofertas destacadas
-                        </h2>
-
-                    </div>
-
-                    <a href="#" class="text-link">
-                        Ver todas las ofertas →
-                    </a>
-
-                </div>
-
-
-                <div class="offers-grid">
-
-
-                    <article class="offer-card">
-
-                        <div class="offer-image offer-turkey">
-
-                            <span class="offer-tag">
-                                DESTACADO
-                            </span>
-
-                        </div>
-
-                        <div class="offer-content">
-
-                            <span class="offer-location">
-                                EUROPA · ASIA
-                            </span>
-
-                            <h3>
-                                Turquía
-                            </h3>
-
-                            <p>
-                                Descubre Estambul, Capadocia y los
-                                paisajes que hacen de Turquía un
-                                destino inolvidable.
-                            </p>
-
-                            <a href="#planifica" class="offer-link">
-                                Solicitar cotización →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="offer-card">
-
-                        <div class="offer-image offer-europe">
-
-                            <span class="offer-tag">
-                                EXPERIENCIA
-                            </span>
-
-                        </div>
-
-                        <div class="offer-content">
-
-                            <span class="offer-location">
-                                EUROPA
-                            </span>
-
-                            <h3>
-                                Europa
-                            </h3>
-
-                            <p>
-                                Vive la historia, cultura y gastronomía
-                                de algunos de los destinos más
-                                fascinantes del mundo.
-                            </p>
-
-                            <a href="#planifica" class="offer-link">
-                                Solicitar cotización →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="offer-card">
-
-                        <div class="offer-image offer-dubai">
-
-                            <span class="offer-tag">
-                                EXCLUSIVO
-                            </span>
-
-                        </div>
-
-                        <div class="offer-content">
-
-                            <span class="offer-location">
-                                MEDIO ORIENTE
-                            </span>
-
-                            <h3>
-                                Dubái
-                            </h3>
-
-                            <p>
-                                Una experiencia que combina lujo,
-                                innovación, cultura y aventura.
-                            </p>
-
-                            <a href="#planifica" class="offer-link">
-                                Solicitar cotización →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             EXPERIENCES
-        ========================== -->
-
-        <section
-            class="section experiences"
-            id="experiencias"
-        >
-
-            <div class="container">
-
-                <div class="section-header centered">
-
-                    <span class="eyebrow dark">
-                        VIAJA A TU MANERA
-                    </span>
-
-                    <h2>
-                        Encuentra la experiencia perfecta
-                    </h2>
-
-                    <p>
-                        Cada viaje es diferente.
-                        Nosotros te ayudamos a diseñar el tuyo.
-                    </p>
-
-                </div>
-
-
-                <div class="experience-grid">
-
-
-                    <a href="#" class="experience-card">
-
-                        <div class="experience-icon">
-                            ✈
-                        </div>
-
-                        <h3>
-                            Aventura
-                        </h3>
-
-                        <p>
-                            Descubre lugares que despiertan
-                            tu espíritu explorador.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#" class="experience-card">
-
-                        <div class="experience-icon">
-                            ◉
-                        </div>
-
-                        <h3>
-                            Cultura
-                        </h3>
-
-                        <p>
-                            Conoce nuevas historias,
-                            tradiciones y formas de vivir.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#" class="experience-card">
-
-                        <div class="experience-icon">
-                            ◇
-                        </div>
-
-                        <h3>
-                            Playa
-                        </h3>
-
-                        <p>
-                            Relájate y disfruta de
-                            destinos paradisíacos.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#" class="experience-card">
-
-                        <div class="experience-icon">
-                            ♡
-                        </div>
-
-                        <h3>
-                            Luna de miel
-                        </h3>
-
-                        <p>
-                            Celebra el comienzo de una
-                            nueva historia juntos.
-                        </p>
-
-                    </a>
-
-
-                </div>
-
-            </div>
-
-        </section>
-		
-
-
-        <!-- =========================
-             PLAN YOUR TRIP
-        ========================== -->
-
-        <section
-            class="plan-section"
-            id="planifica"
-        >
-
-            <div class="plan-overlay"></div>
-
-            <div class="container plan-content">
-
-                <span class="eyebrow">
-                    TU VIAJE, A TU MEDIDA
-                </span>
-
-                <h2>
-                    Diseñamos el viaje.
-                    <span>Tú eliges la historia.</span>
-                </h2>
-
-                <p>
-                    Cuéntanos qué estás buscando y nuestro equipo
-                    de especialistas preparará una propuesta
-                    personalizada para ti.
-                </p>
-
-                <a
-                    href="#"
-                    class="btn btn-light"
-                    id="startPlannerBtn"
-                >
-                    Comenzar mi cotización
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             WHY US
-        ========================== -->
-
-        <section
-            class="section why-us"
-            id="nosotros"
-        >
-
-            <div class="container">
-
-                <div class="section-header centered">
-
-                    <span class="eyebrow dark">
-                        ¿POR QUÉ GALERÍA DE VIAJES?
-                    </span>
-
-                    <h2>
-                        Tu viaje comienza mucho antes de despegar
-                    </h2>
-
-                    <p>
-                        Te acompañamos desde la inspiración
-                        hasta el regreso a casa.
-                    </p>
-
-                </div>
-
-
-                <div class="benefits-grid">
-
-
-                    <div class="benefit">
-
-                        <div class="benefit-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Experiencia
-                        </h3>
-
-                        <p>
-                            Conocimiento y experiencia para ayudarte
-                            a encontrar el viaje adecuado para ti.
-                        </p>
-
-                    </div>
-
-
-                    <div class="benefit">
-
-                        <div class="benefit-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Personalización
-                        </h3>
-
-                        <p>
-                            Diseñamos propuestas adaptadas a tus
-                            intereses, necesidades y expectativas.
-                        </p>
-
-                    </div>
-
-
-                    <div class="benefit">
-
-                        <div class="benefit-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Acompañamiento
-                        </h3>
-
-                        <p>
-                            Nuestro equipo te acompaña para que
-                            disfrutes tu viaje con tranquilidad.
-                        </p>
-
-                    </div>
-
-
-                    <div class="benefit">
-
-                        <div class="benefit-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Respaldo
-                        </h3>
-
-                        <p>
-                            Una red de aliados y especialistas
-                            para hacer realidad tu experiencia.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-		
-		
-		<!-- =========================
-     PARTNERS / ALIADOS
-========================== -->
-
-<section class="section partners-section" id="aliados">
+<section
+    class="travel-search"
+    id="buscador"
+>
 
     <div class="container">
 
-        <div class="section-header centered">
-
-            <span class="eyebrow dark">
-                NUESTROS ALIADOS
-            </span>
-
-            <h2>
-                Una red que hace posible tu viaje
-            </h2>
-
-            <p>
-                Trabajamos junto a operadores y especialistas
-                internacionales para ofrecerte experiencias
-                únicas en diferentes destinos del mundo.
-            </p>
-
-        </div>
+        <div class="search-card">
 
 
-        <div class="partners-slider">
+            <!-- ENCABEZADO -->
 
-            <div class="partners-track">
+            <div class="search-intro">
 
+                <span class="eyebrow dark">
 
-                <a
-                    href="https://www.trabax.es/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="partner-logo"
-                >
-                    <img
-                        src="assets/images/sitio-actual/trabax-logo.png"
-                        alt="Trabax"
-                    >
-                </a>
+                    ENCUENTRA TU PRÓXIMA EXPERIENCIA
+
+                </span>
 
 
-                <a
-                    href="http://eurorutas.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="partner-logo"
-                >
-                    <img
-                        src="assets/images/sitio-actual/EuroRutas.png"
-                        alt="EuroRutas"
-                    >
-                </a>
+                <h2>
 
+                    ¿Qué tipo de viaje estás buscando?
 
-                <a
-                    href="http://www.mapaplus.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="partner-logo"
-                >
-                    <img
-                        src="assets/images/sitio-actual/mapa_plus-logo.png"
-                        alt="Mapaplus"
-                    >
-                </a>
-
-
-                <a
-                    href="https://galeria.mapaplusdynamics.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="partner-logo"
-                >
-                    <img
-                        src="assets/images/sitio-actual/galeria_dynamics-logo.png"
-                        alt="Galería Dynamics"
-                    >
-                </a>
-
-
-                <a
-                    href="http://www.wamos.com/es/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="partner-logo"
-                >
-                    <img
-                        src="assets/images/sitio-actual/wamos-logo.png"
-                        alt="Wamos"
-                    >
-                </a>
-
+                </h2>
 
             </div>
 
-        </div>
 
-        <div class="partners-note">
-            <span>
-                Algunos de nuestros aliados y operadores especializados
-            </span>
+
+            <!-- CAMPOS -->
+
+            <div class="search-fields">
+
+
+                <!-- DESTINO -->
+
+                <div class="search-field">
+
+                    <label
+                        for="destinationSelect"
+                    >
+
+                        Destino
+
+                    </label>
+
+
+                    <select
+                        id="destinationSelect"
+                    >
+
+                        <option value="">
+
+                            ¿A dónde quieres ir?
+
+                        </option>
+
+                        <option value="europa">
+                            Europa
+                        </option>
+
+                        <option value="america">
+                            América
+                        </option>
+
+                        <option value="asia">
+                            Asia
+                        </option>
+
+                        <option value="medio-oriente">
+                            Medio Oriente
+                        </option>
+
+                        <option value="africa">
+                            África
+                        </option>
+
+                        <option value="caribe">
+                            Caribe
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- EXPERIENCIA -->
+
+                <div class="search-field">
+
+                    <label
+                        for="experienceSelect"
+                    >
+
+                        Experiencia
+
+                    </label>
+
+
+                    <select
+                        id="experienceSelect"
+                    >
+
+                        <option value="">
+
+                            ¿Qué quieres vivir?
+
+                        </option>
+
+                        <option value="playa">
+                            Playa
+                        </option>
+
+                        <option value="aventura">
+                            Aventura
+                        </option>
+
+                        <option value="cultura">
+                            Cultura
+                        </option>
+
+                        <option value="gastronomia">
+                            Gastronomía
+                        </option>
+
+                        <option value="naturaleza">
+                            Naturaleza
+                        </option>
+
+                        <option value="luna-de-miel">
+                            Luna de miel
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- FECHA -->
+
+                <div class="search-field">
+
+                    <label
+                        for="travelDate"
+                    >
+
+                        Fecha aproximada
+
+                    </label>
+
+
+                    <input
+                        type="month"
+                        id="travelDate"
+                    >
+
+                </div>
+
+
+
+                <!-- BOTÓN -->
+
+                <button
+                    class="btn btn-primary search-btn"
+                    id="searchTravelBtn"
+                    type="button"
+                >
+
+                    Explorar viajes
+
+                </button>
+
+            </div>
+
         </div>
 
     </div>
@@ -869,172 +421,1145 @@
 </section>
 
 
-        <!-- =========================
-             FINAL CTA
-        ========================== -->
 
-        <section class="final-cta">
+<!-- =====================================================
+     DESTINOS DESTACADOS
+====================================================== -->
 
-            <div class="container">
+<section
+    class="section destinations"
+    id="destinos"
+>
 
-                <span class="eyebrow">
-                    ¿LISTO PARA COMENZAR?
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="eyebrow dark">
+
+                    INSPÍRATE
+
                 </span>
 
+
                 <h2>
-                    El mundo está esperando.
+
+                    Destinos que esperan por ti
+
                 </h2>
-
-                <p>
-                    Cuéntanos dónde quieres ir
-                    y nosotros nos encargamos del resto.
-                </p>
-
-                <a
-                    href="#planifica"
-                    class="btn btn-light"
-                >
-                    Diseña tu viaje
-                </a>
 
             </div>
 
-        </section>
 
-    </main>
+            <a
+                href="#"
+                class="text-link"
+            >
+
+                Ver todos los destinos →
+
+            </a>
+
+        </div>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
 
-    <footer class="site-footer">
-
-        <div class="container footer-grid">
+        <div class="destination-grid">
 
 
-            <div class="footer-brand">
+            <!-- EUROPA -->
 
-                <div class="logo footer-logo">
+            <article
+                class="destination-card destination-europe"
+            >
 
-                    <span class="logo-main">
-                        GALERÍA
+                <div class="destination-overlay"></div>
+
+
+                <div class="destination-content">
+
+                    <span>
+                        DESCUBRE
                     </span>
 
-                    <span class="logo-sub">
-                        DE VIAJES
+
+                    <h3>
+                        Europa
+                    </h3>
+
+
+                    <a href="#planifica">
+
+                        Explorar destino →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARIBE -->
+
+            <article
+                class="destination-card destination-caribbean"
+            >
+
+                <div class="destination-overlay"></div>
+
+
+                <div class="destination-content">
+
+                    <span>
+                        RELÁJATE
+                    </span>
+
+
+                    <h3>
+                        Caribe
+                    </h3>
+
+
+                    <a href="#planifica">
+
+                        Explorar destino →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ASIA -->
+
+            <article
+                class="destination-card destination-asia"
+            >
+
+                <div class="destination-overlay"></div>
+
+
+                <div class="destination-content">
+
+                    <span>
+                        AVENTÚRATE
+                    </span>
+
+
+                    <h3>
+                        Asia
+                    </h3>
+
+
+                    <a href="#planifica">
+
+                        Explorar destino →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- MEDIO ORIENTE -->
+
+            <article
+                class="destination-card destination-dubai"
+            >
+
+                <div class="destination-overlay"></div>
+
+
+                <div class="destination-content">
+
+                    <span>
+                        VIVE
+                    </span>
+
+
+                    <h3>
+                        Medio Oriente
+                    </h3>
+
+
+                    <a href="#planifica">
+
+                        Explorar destino →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OFERTAS DESTACADAS
+====================================================== -->
+
+<section
+    class="section offers"
+    id="ofertas"
+>
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="eyebrow dark">
+
+                    INSPÍRATE Y VIAJA
+
+                </span>
+
+
+                <h2>
+
+                    Ofertas destacadas
+
+                </h2>
+
+            </div>
+
+
+            <a
+                href="#"
+                class="text-link"
+            >
+
+                Ver todas las ofertas →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="offers-grid">
+
+
+            <!-- TURQUÍA -->
+
+            <article class="offer-card">
+
+                <div
+                    class="offer-image offer-turkey"
+                >
+
+                    <span class="offer-tag">
+
+                        DESTACADO
+
                     </span>
 
                 </div>
 
-                <p>
-                    Diseñamos experiencias que
-                    se convierten en recuerdos.
-                </p>
 
-            </div>
+                <div class="offer-content">
 
+                    <span class="offer-location">
 
-            <div class="footer-column">
+                        EUROPA · ASIA
 
-                <h4>
-                    Explora
-                </h4>
-
-                <a href="#destinos">
-                    Destinos
-                </a>
-
-                <a href="#experiencias">
-                    Experiencias
-                </a>
-
-                <a href="#ofertas">
-                    Ofertas
-                </a>
-
-            </div>
+                    </span>
 
 
-            <div class="footer-column">
+                    <h3>
 
-                <h4>
-                    Planifica
-                </h4>
+                        Turquía
 
-                <a href="#planifica">
-                    Diseña tu viaje
-                </a>
-
-                <a href="#">
-                    Viajes corporativos
-                </a>
-
-                <a href="#">
-                    Grupos y eventos
-                </a>
-
-            </div>
+                    </h3>
 
 
-            <div class="footer-column">
+                    <p>
 
-                <h4>
-                    Contacto
-                </h4>
+                        Descubre Estambul, Capadocia y los
+                        paisajes que hacen de Turquía un
+                        destino inolvidable.
 
-                <a href="#">
-                    WhatsApp
-                </a>
+                    </p>
 
-                <a href="#">
-                    Email
-                </a>
 
-                <a href="#">
-                    Costa Rica
-                </a>
+                    <a
+                        href="#planifica"
+                        class="offer-link"
+                    >
 
-            </div>
+                        Solicitar cotización →
 
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- EUROPA -->
+
+            <article class="offer-card">
+
+                <div
+                    class="offer-image offer-europe"
+                >
+
+                    <span class="offer-tag">
+
+                        EXPERIENCIA
+
+                    </span>
+
+                </div>
+
+
+                <div class="offer-content">
+
+                    <span class="offer-location">
+
+                        EUROPA
+
+                    </span>
+
+
+                    <h3>
+
+                        Europa
+
+                    </h3>
+
+
+                    <p>
+
+                        Vive la historia, cultura y gastronomía
+                        de algunos de los destinos más
+                        fascinantes del mundo.
+
+                    </p>
+
+
+                    <a
+                        href="#planifica"
+                        class="offer-link"
+                    >
+
+                        Solicitar cotización →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- DUBÁI -->
+
+            <article class="offer-card">
+
+                <div
+                    class="offer-image offer-dubai"
+                >
+
+                    <span class="offer-tag">
+
+                        EXCLUSIVO
+
+                    </span>
+
+                </div>
+
+
+                <div class="offer-content">
+
+                    <span class="offer-location">
+
+                        MEDIO ORIENTE
+
+                    </span>
+
+
+                    <h3>
+
+                        Dubái
+
+                    </h3>
+
+
+                    <p>
+
+                        Una experiencia que combina lujo,
+                        innovación, cultura y aventura.
+
+                    </p>
+
+
+                    <a
+                        href="#planifica"
+                        class="offer-link"
+                    >
+
+                        Solicitar cotización →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCIAS
+====================================================== -->
+
+<section
+    class="section experiences"
+    id="experiencias"
+>
+
+    <div class="container">
+
+
+        <div class="section-header centered">
+
+            <span class="eyebrow dark">
+
+                VIAJA A TU MANERA
+
+            </span>
+
+
+            <h2>
+
+                Encuentra la experiencia perfecta
+
+            </h2>
+
+
+            <p>
+
+                Cada viaje es diferente.
+                Nosotros te ayudamos a diseñar el tuyo.
+
+            </p>
 
         </div>
 
 
-        <div class="footer-bottom">
 
-            <div class="container">
+        <div class="experience-grid">
+
+
+            <a
+                href="#planifica"
+                class="experience-card"
+            >
+
+                <div class="experience-icon">
+                    ✈
+                </div>
+
+
+                <h3>
+                    Aventura
+                </h3>
+
 
                 <p>
-                    © 2026 Galería de Viajes.
-                    Demo conceptual para presentación.
+
+                    Descubre lugares que despiertan
+                    tu espíritu explorador.
+
                 </p>
 
-            </div>
+            </a>
+
+
+
+            <a
+                href="#planifica"
+                class="experience-card"
+            >
+
+                <div class="experience-icon">
+                    ◉
+                </div>
+
+
+                <h3>
+                    Cultura
+                </h3>
+
+
+                <p>
+
+                    Conoce nuevas historias,
+                    tradiciones y formas de vivir.
+
+                </p>
+
+            </a>
+
+
+
+            <a
+                href="#planifica"
+                class="experience-card"
+            >
+
+                <div class="experience-icon">
+                    ◇
+                </div>
+
+
+                <h3>
+                    Playa
+                </h3>
+
+
+                <p>
+
+                    Relájate y disfruta de
+                    destinos paradisíacos.
+
+                </p>
+
+            </a>
+
+
+
+            <a
+                href="#planifica"
+                class="experience-card"
+            >
+
+                <div class="experience-icon">
+                    ♡
+                </div>
+
+
+                <h3>
+                    Luna de miel
+                </h3>
+
+
+                <p>
+
+                    Celebra el comienzo de una
+                    nueva historia juntos.
+
+                </p>
+
+            </a>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         WHATSAPP
-    ========================== -->
 
-    <a
-        href="#"
-        class="whatsapp-btn"
-        aria-label="Contactar por WhatsApp"
-    >
+<!-- =====================================================
+     PLANIFICA TU VIAJE
+====================================================== -->
 
-        <span>
-            WhatsApp
+<section
+    class="plan-section"
+    id="planifica"
+>
+
+    <div class="plan-overlay"></div>
+
+
+    <div class="container plan-content">
+
+
+        <span class="eyebrow">
+
+            TU VIAJE, A TU MEDIDA
+
         </span>
 
-    </a>
+
+        <h2>
+
+            Diseñamos el viaje.
+
+            <span>
+                Tú eliges la historia.
+            </span>
+
+        </h2>
 
 
-    <script src="js/main.js"></script>
+        <p>
+
+            Cuéntanos qué estás buscando y nuestro equipo
+            de especialistas preparará una propuesta
+            personalizada para ti.
+
+        </p>
+
+
+        <a
+            href="#"
+            class="btn btn-light"
+            id="startPlannerBtn"
+        >
+
+            Comenzar mi cotización
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POR QUÉ GALERÍA DE VIAJES
+====================================================== -->
+
+<section
+    class="section why-us"
+    id="nosotros"
+>
+
+    <div class="container">
+
+
+        <div class="section-header centered">
+
+            <span class="eyebrow dark">
+
+                ¿POR QUÉ GALERÍA DE VIAJES?
+
+            </span>
+
+
+            <h2>
+
+                Tu viaje comienza mucho antes de despegar
+
+            </h2>
+
+
+            <p>
+
+                Te acompañamos desde la inspiración
+                hasta el regreso a casa.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="benefits-grid">
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">
+                    01
+                </div>
+
+
+                <h3>
+                    Experiencia
+                </h3>
+
+
+                <p>
+
+                    Conocimiento y experiencia para ayudarte
+                    a encontrar el viaje adecuado para ti.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Personalización
+                </h3>
+
+
+                <p>
+
+                    Diseñamos propuestas adaptadas a tus
+                    intereses, necesidades y expectativas.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Acompañamiento
+                </h3>
+
+
+                <p>
+
+                    Nuestro equipo te acompaña para que
+                    disfrutes tu viaje con tranquilidad.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">
+                    04
+                </div>
+
+
+                <h3>
+                    Respaldo
+                </h3>
+
+
+                <p>
+
+                    Una red de aliados y especialistas
+                    para hacer realidad tu experiencia.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ALIADOS
+====================================================== -->
+
+<section
+    class="section partners-section"
+    id="aliados"
+>
+
+    <div class="container">
+
+
+        <!-- INTRODUCCIÓN -->
+
+        <div class="section-header centered">
+
+            <span class="eyebrow dark">
+
+                NUESTROS ALIADOS
+
+            </span>
+
+
+            <h2>
+
+                Una red que hace posible tu viaje
+
+            </h2>
+
+
+            <p>
+
+                Trabajamos junto a operadores y especialistas
+                internacionales para ofrecerte experiencias
+                únicas en diferentes destinos del mundo.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- LOGOS -->
+
+        <div class="partners-slider">
+
+            <div class="partners-track">
+
+
+                <!-- TRABAX -->
+
+                <a
+                    href="https://www.trabax.es/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="partner-logo"
+                >
+
+                    <img
+                        src="assets/images/sitio-actual/trabax-logo.png"
+                        alt="Trabax"
+                    >
+
+                </a>
+
+
+
+                <!-- EURORUTAS -->
+
+                <a
+                    href="http://eurorutas.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="partner-logo"
+                >
+
+                    <img
+                        src="assets/images/sitio-actual/EuroRutas.png"
+                        alt="EuroRutas"
+                    >
+
+                </a>
+
+
+
+                <!-- MAPAPLUS -->
+
+                <a
+                    href="http://www.mapaplus.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="partner-logo"
+                >
+
+                    <img
+                        src="assets/images/sitio-actual/mapa_plus-logo.png"
+                        alt="Mapaplus"
+                    >
+
+                </a>
+
+
+
+                <!-- GALERÍA DYNAMICS -->
+
+                <a
+                    href="https://galeria.mapaplusdynamics.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="partner-logo"
+                >
+
+                    <img
+                        src="assets/images/sitio-actual/galeria_dynamics-logo.png"
+                        alt="Galería Dynamics"
+                    >
+
+                </a>
+
+
+
+                <!-- WAMOS -->
+
+                <a
+                    href="http://www.wamos.com/es/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="partner-logo"
+                >
+
+                    <img
+                        src="assets/images/sitio-actual/wamos-logo.png"
+                        alt="Wamos"
+                    >
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NOTA -->
+
+        <div class="partners-note">
+
+            <span>
+
+                Algunos de nuestros aliados y operadores especializados
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA FINAL
+====================================================== -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+
+        <span class="eyebrow">
+
+            ¿LISTO PARA COMENZAR?
+
+        </span>
+
+
+        <h2>
+
+            El mundo está esperando.
+
+        </h2>
+
+
+        <p>
+
+            Cuéntanos dónde quieres ir
+            y nosotros nos encargamos del resto.
+
+        </p>
+
+
+        <a
+            href="#planifica"
+            class="btn btn-light"
+        >
+
+            Diseña tu viaje
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- MARCA -->
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="logo-brand"
+            >
+
+                <img
+                    src="https://www.galeriadeviajes.com/files/2/images/logotop.png"
+                    alt="Galería de Viajes"
+                    class="site-logo-img"
+                >
+
+            </a>
+
+
+            <p>
+
+                Diseñamos experiencias que
+                se convierten en recuerdos.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- EXPLORA -->
+
+        <div class="footer-column">
+
+            <h4>
+                Explora
+            </h4>
+
+
+            <a href="#destinos">
+                Destinos
+            </a>
+
+
+            <a href="#experiencias">
+                Experiencias
+            </a>
+
+
+            <a href="#ofertas">
+                Ofertas
+            </a>
+
+        </div>
+
+
+
+        <!-- PLANIFICA -->
+
+        <div class="footer-column">
+
+            <h4>
+                Planifica
+            </h4>
+
+
+            <a href="#planifica">
+                Diseña tu viaje
+            </a>
+
+
+            <a href="#">
+                Viajes corporativos
+            </a>
+
+
+            <a href="#">
+                Grupos y eventos
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACTO -->
+
+        <div class="footer-column">
+
+            <h4>
+                Contacto
+            </h4>
+
+
+            <a href="#">
+                WhatsApp
+            </a>
+
+
+            <a href="#">
+                Email
+            </a>
+
+
+            <a href="#">
+                Costa Rica
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+
+                © 2026 Galería de Viajes.
+                Demo conceptual para presentación.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     WHATSAPP
+====================================================== -->
+
+<a
+    href="#"
+    class="whatsapp-btn"
+    aria-label="Contactar por WhatsApp"
+>
+
+    <span>
+        WhatsApp
+    </span>
+
+</a>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/main.js"></script>
+
 
 </body>
+
 </html>
