@@ -85,7 +85,7 @@ async function cargarCatalogoDestinos() {
                     activo
                 )
             ),
-            viajes (
+            viajes!viajes_destino_fk (
                 id,
                 nombre,
                 slug,
@@ -120,6 +120,86 @@ async function cargarCatalogoDestinos() {
         return;
     }
 
+    const {
+        data: relacionesViajeDestinos,
+        error: errorViajeDestinos
+    } = await supabase
+        .from("viaje_destinos")
+        .select(`
+            viaje_id,
+            destino_id,
+            es_principal,
+            orden,
+            destinos (
+                id,
+                nombre,
+                slug
+            )
+        `)
+        .order(
+            "orden",
+            {
+                ascending: true
+            }
+        );
+
+    if (errorViajeDestinos) {
+        console.error(
+            "[Supabase] Error al consultar las relaciones viaje-destinos:",
+            errorViajeDestinos
+        );
+
+        mostrarErrorCatalogo(
+            "No pudimos cargar la informacion de destinos de nuestros viajes en este momento."
+        );
+
+        return;
+    }
+
+    const destinosPorViaje =
+        new Map();
+
+    (relacionesViajeDestinos || []).forEach(
+        (relacion) => {
+            const destino =
+                relacion.destinos;
+
+            if (!destino) {
+                return;
+            }
+
+            if (
+                !destinosPorViaje.has(
+                    relacion.viaje_id
+                )
+            ) {
+                destinosPorViaje.set(
+                    relacion.viaje_id,
+                    []
+                );
+            }
+
+            destinosPorViaje
+                .get(relacion.viaje_id)
+                .push({
+                    id:
+                        destino.id,
+
+                    nombre:
+                        destino.nombre,
+
+                    slug:
+                        destino.slug,
+
+                    es_principal:
+                        relacion.es_principal,
+
+                    orden:
+                        relacion.orden
+                });
+        }
+    );
+
     const catalogo =
         (data || []).map(
             (destino) => ({
@@ -150,7 +230,12 @@ async function cargarCatalogoDestinos() {
                                     destino.slug,
 
                                 destino_nombre:
-                                    destino.nombre
+                                    destino.nombre,
+
+                                destinos:
+                                    destinosPorViaje.get(
+                                        viaje.id
+                                    ) || []
                             })
                         ) || []
             })
@@ -2978,7 +3063,12 @@ function filtrarViajes({
             const coincideDestino =
                 !destinoSlug ||
                 viaje.destino_slug ===
-                    destinoSlug;
+                    destinoSlug ||
+                viaje.destinos?.some(
+                    (destino) =>
+                        destino.slug ===
+                        destinoSlug
+                );
 
             const coincideExperiencia =
                 !experienciaSlug ||
