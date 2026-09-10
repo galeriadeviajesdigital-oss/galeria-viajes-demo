@@ -1,4 +1,4 @@
-﻿import "../css/destination-detail.css";
+import "../css/destination-detail.css";
 import { createClient } from "@supabase/supabase-js";
 
 /* ============================================================
@@ -1181,7 +1181,7 @@ async function mostrarDetalleViaje(
     try {
         const datos =
             await cargarDetalleViaje(
-                viaje.id
+                viaje.slug
             );
 
         window.viajeDetalleActual = {
@@ -1500,7 +1500,7 @@ async function cargarDetalleViaje(slug) {
     const {
         data: viaje,
         error: errorViaje
-    } = await supabaseClient
+    } = await supabase
         .from("viajes")
         .select(`
             *,
@@ -1536,7 +1536,7 @@ async function cargarDetalleViaje(slug) {
         salidasResult
     ] = await Promise.all([
 
-        supabaseClient
+        supabase
             .from("viaje_itinerario")
             .select("*")
             .eq("viaje_id", viajeId)
@@ -1547,7 +1547,7 @@ async function cargarDetalleViaje(slug) {
                 }
             ),
 
-        supabaseClient
+        supabase
             .from("viaje_hoteles")
             .select("*")
             .eq("viaje_id", viajeId)
@@ -1558,7 +1558,7 @@ async function cargarDetalleViaje(slug) {
                 }
             ),
 
-        supabaseClient
+        supabase
             .from("viaje_inclusiones")
             .select("*")
             .eq("viaje_id", viajeId)
@@ -1569,7 +1569,7 @@ async function cargarDetalleViaje(slug) {
                 }
             ),
 
-        supabaseClient
+        supabase
             .from("viaje_exclusiones")
             .select("*")
             .eq("viaje_id", viajeId)
@@ -1580,7 +1580,7 @@ async function cargarDetalleViaje(slug) {
                 }
             ),
 
-        supabaseClient
+        supabase
             .from("viaje_opciones")
             .select(`
                 *,
@@ -1597,7 +1597,7 @@ async function cargarDetalleViaje(slug) {
                 }
             ),
 
-        supabaseClient
+        supabase
             .from("viaje_salidas")
             .select("*")
             .eq("viaje_id", viajeId)
