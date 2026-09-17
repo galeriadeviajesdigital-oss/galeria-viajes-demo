@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CRM | Galería de Viajes</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/crm.css"
+    >
+</head>
+
+<body>
+
+    <main class="crm-auth">
+
+        <section class="crm-auth-card">
+
+            <div class="crm-auth-brand">
+                <div class="crm-auth-logo">
+                    GV
+                </div>
+
+                <div>
+                    <span class="crm-auth-brand-name">
+                        GALERÍA DE VIAJES
+                    </span>
+
+                    <span class="crm-auth-brand-subtitle">
+                        CRM
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="crm-auth-header">
+
+                <span class="crm-auth-eyebrow">
+                    ÁREA PRIVADA
+                </span>
+
+                <h1>
+                    Bienvenido
+                </h1>
+
+                <p>
+                    Ingresa a tu cuenta para acceder
+                    al sistema de gestión.
+                </p>
+
+            </div>
+
+
+            <form
+                id="loginForm"
+                class="crm-auth-form"
+            >
+
+                <div class="crm-form-field">
+
+                    <label for="email">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="username"
+                        placeholder="correo@galeriadeviajes.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="crm-form-field">
+
+                    <label for="password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="current-password"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                    >
+
+                </div>
+
+
+                <div
+                    id="loginError"
+                    class="crm-auth-message crm-auth-message-error"
+                    hidden
+                    role="alert"
+                ></div>
+
+
+                <button
+                    type="submit"
+                    id="loginButton"
+                    class="crm-auth-button"
+                >
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+
+            <div class="crm-auth-footer">
+
+                <a
+                    href="#"
+                    id="forgotPassword"
+                >
+                    ¿Olvidaste tu contraseña?
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script
+        type="module"
+        src="./js/main.js"
+    ></script>
+
+</body>
+</html>
