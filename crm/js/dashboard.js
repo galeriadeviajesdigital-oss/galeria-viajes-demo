@@ -1,10 +1,10 @@
-﻿
+
 import { supabase } from "./auth.js";
 import { renderContactos } from "./contactos.js";
 import { renderLeads } from "./leads.js";
 
 // =========================================================
-// CRM GALERÃA DE VIAJES
+// CRM GALERÍA DE VIAJES
 // Dashboard y estructura principal
 // =========================================================
 
@@ -23,18 +23,18 @@ const DASHBOARD_HTML = `
     <a
         href="#"
         class="crm-sidebar-logo-link"
-        aria-label="GalerÃ­a de Viajes"
+        aria-label="Galería de Viajes"
     >
         <img
     src="/assets/logo-B5DZdpEy.png"
-    alt="GalerÃ­a de Viajes"
+    alt="Galería de Viajes"
     class="crm-sidebar-logo-image"
 >
     </a>
 
     <div class="crm-sidebar-brand-text">
         <span>CRM</span>
-        <small>GalerÃ­a de Viajes</small>
+        <small>Galería de Viajes</small>
     </div>
 
 </div>
@@ -51,7 +51,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item active"
                     data-module="dashboard"
                 >
-                    <span class="crm-nav-icon">âŒ‚</span>
+                    <span class="crm-nav-icon">⌂</span>
                     <span>Dashboard</span>
                 </button>
             </div>
@@ -67,7 +67,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="contactos"
                 >
-                    <span class="crm-nav-icon">â™™</span>
+                    <span class="crm-nav-icon">♙</span>
                     <span>Contactos</span>
                 </button>
 
@@ -75,7 +75,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="leads"
                 >
-                    <span class="crm-nav-icon">â—Ž</span>
+                    <span class="crm-nav-icon">◎</span>
                     <span>Leads</span>
                 </button>
 
@@ -83,7 +83,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="oportunidades"
                 >
-                    <span class="crm-nav-icon">â—‡</span>
+                    <span class="crm-nav-icon">◇</span>
                     <span>Oportunidades</span>
                 </button>
 
@@ -100,7 +100,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="cotizaciones"
                 >
-                    <span class="crm-nav-icon">â–¤</span>
+                    <span class="crm-nav-icon">▤</span>
                     <span>Cotizaciones</span>
                 </button>
 
@@ -108,7 +108,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="seguimientos"
                 >
-                    <span class="crm-nav-icon">â—·</span>
+                    <span class="crm-nav-icon">◷</span>
                     <span>Seguimientos</span>
                 </button>
 
@@ -116,7 +116,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="ventas"
                 >
-                    <span class="crm-nav-icon">â–£</span>
+                    <span class="crm-nav-icon">▣</span>
                     <span>Ventas</span>
                 </button>
 
@@ -126,14 +126,14 @@ const DASHBOARD_HTML = `
             <div class="crm-nav-section">
 
                 <span class="crm-nav-title">
-                    OPERACIÃ“N
+                    OPERACIÓN
                 </span>
 
                 <button
                     class="crm-nav-item"
                     data-module="viajes"
                 >
-                    <span class="crm-nav-icon">âœˆ</span>
+                    <span class="crm-nav-icon">✈</span>
                     <span>Viajes</span>
                 </button>
 
@@ -141,8 +141,8 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="campanas"
                 >
-                    <span class="crm-nav-icon">â—‡</span>
-                    <span>CampaÃ±as</span>
+                    <span class="crm-nav-icon">◇</span>
+                    <span>Campañas</span>
                 </button>
 
             </div>
@@ -151,14 +151,14 @@ const DASHBOARD_HTML = `
             <div class="crm-nav-section">
 
                 <span class="crm-nav-title">
-                    ANÃLISIS
+                    ANÁLISIS
                 </span>
 
                 <button
                     class="crm-nav-item"
                     data-module="reportes"
                 >
-                    <span class="crm-nav-icon">â–¥</span>
+                    <span class="crm-nav-icon">▥</span>
                     <span>Reportes</span>
                 </button>
 
@@ -173,8 +173,8 @@ const DASHBOARD_HTML = `
                 class="crm-nav-item"
                 data-module="configuracion"
             >
-                <span class="crm-nav-icon">âš™</span>
-                <span>ConfiguraciÃ³n</span>
+                <span class="crm-nav-icon">⚙</span>
+                <span>Configuración</span>
             </button>
 
         </div>
@@ -197,9 +197,9 @@ const DASHBOARD_HTML = `
                 <button
                     id="crmMenuToggle"
                     class="crm-menu-toggle"
-                    aria-label="Abrir menÃº"
+                    aria-label="Abrir menú"
                 >
-                    â˜°
+                    ☰
                 </button>
 
                 <div>
@@ -221,7 +221,7 @@ const DASHBOARD_HTML = `
                     class="crm-notification-button"
                     aria-label="Notificaciones"
                 >
-                    â™¢
+                    ♢
                     <span class="crm-notification-dot"></span>
                 </button>
 
@@ -250,9 +250,9 @@ const DASHBOARD_HTML = `
                     <button
                         id="crmUserMenu"
                         class="crm-user-menu"
-                        aria-label="MenÃº de usuario"
+                        aria-label="Menú de usuario"
                     >
-                        â–¾
+                        ▾
                     </button>
 
                 </div>
@@ -289,14 +289,14 @@ const DASHBOARD_HTML = `
 
                         <p>
                             Consulta la actividad comercial
-                            y operativa de GalerÃ­a de Viajes.
+                            y operativa de Galería de Viajes.
                         </p>
                     </div>
 
                 </div>
 
 
-                <!-- MÃ‰TRICAS -->
+                <!-- MÉTRICAS -->
 
                 <div class="crm-stats-grid">
 
@@ -304,11 +304,11 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Leads</span>
-                            <span class="crm-stat-icon">â—Ž</span>
+                            <span class="crm-stat-icon">◎</span>
                         </div>
 
                         <strong id="statLeads">
-                            â€”
+                            —
                         </strong>
 
                         <small>
@@ -322,11 +322,11 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Oportunidades</span>
-                            <span class="crm-stat-icon">â—‡</span>
+                            <span class="crm-stat-icon">◇</span>
                         </div>
 
                         <strong id="statOportunidades">
-                            â€”
+                            —
                         </strong>
 
                         <small>
@@ -340,11 +340,11 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Cotizaciones</span>
-                            <span class="crm-stat-icon">â–¤</span>
+                            <span class="crm-stat-icon">▤</span>
                         </div>
 
                         <strong id="statCotizaciones">
-                            â€”
+                            —
                         </strong>
 
                         <small>
@@ -358,11 +358,11 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Ventas</span>
-                            <span class="crm-stat-icon">â–£</span>
+                            <span class="crm-stat-icon">▣</span>
                         </div>
 
                         <strong id="statVentas">
-                            â€”
+                            —
                         </strong>
 
                         <small>
@@ -414,7 +414,7 @@ const DASHBOARD_HTML = `
                                 </span>
 
                                 <strong>
-                                    â€”
+                                    —
                                 </strong>
 
                             </div>
@@ -427,7 +427,7 @@ const DASHBOARD_HTML = `
                                 </span>
 
                                 <strong>
-                                    â€”
+                                    —
                                 </strong>
 
                             </div>
@@ -436,11 +436,11 @@ const DASHBOARD_HTML = `
                             <div class="crm-pipeline-stage">
 
                                 <span>
-                                    CotizaciÃ³n
+                                    Cotización
                                 </span>
 
                                 <strong>
-                                    â€”
+                                    —
                                 </strong>
 
                             </div>
@@ -453,7 +453,7 @@ const DASHBOARD_HTML = `
                                 </span>
 
                                 <strong>
-                                    â€”
+                                    —
                                 </strong>
 
                             </div>
@@ -473,7 +473,7 @@ const DASHBOARD_HTML = `
                                 </span>
 
                                 <h3>
-                                    PrÃ³ximos seguimientos
+                                    Próximos seguimientos
                                 </h3>
                             </div>
 
@@ -486,7 +486,7 @@ const DASHBOARD_HTML = `
                         >
 
                             <div class="crm-empty-icon">
-                                â—·
+                                ◷
                             </div>
 
                             <strong>
@@ -494,7 +494,7 @@ const DASHBOARD_HTML = `
                             </strong>
 
                             <p>
-                                AquÃ­ aparecerÃ¡n las prÃ³ximas
+                                Aquí aparecerán las próximas
                                 actividades comerciales.
                             </p>
 
@@ -517,7 +517,7 @@ const DASHBOARD_HTML = `
                             </span>
 
                             <h3>
-                                Ãšltimos movimientos
+                                Últimos movimientos
                             </h3>
                         </div>
 
@@ -530,7 +530,7 @@ const DASHBOARD_HTML = `
                     >
 
                         <div class="crm-empty-icon">
-                            â—·
+                            ◷
                         </div>
 
                         <strong>
@@ -538,8 +538,8 @@ const DASHBOARD_HTML = `
                         </strong>
 
                         <p>
-                            Las actividades del CRM aparecerÃ¡n
-                            en esta secciÃ³n.
+                            Las actividades del CRM aparecerán
+                            en esta sección.
                         </p>
 
                     </div>
@@ -549,7 +549,7 @@ const DASHBOARD_HTML = `
             </section>
 
 
-            <!-- MÃ“DULOS FUTUROS -->
+            <!-- MÓDULOS FUTUROS -->
 
             <section
                 class="crm-module crm-module-placeholder"
@@ -565,7 +565,7 @@ const DASHBOARD_HTML = `
                 </h2>
 
                 <p>
-                    MÃ³dulo de contactos.
+                    Módulo de contactos.
                 </p>
             </section>
 
@@ -584,7 +584,7 @@ const DASHBOARD_HTML = `
                 </h2>
 
                 <p>
-                    MÃ³dulo de leads.
+                    Módulo de leads.
                 </p>
             </section>
 
@@ -603,7 +603,7 @@ const DASHBOARD_HTML = `
                 </h2>
 
                 <p>
-                    MÃ³dulo de oportunidades.
+                    Módulo de oportunidades.
                 </p>
             </section>
 
@@ -622,7 +622,7 @@ const DASHBOARD_HTML = `
                 </h2>
 
                 <p>
-                    MÃ³dulo de cotizaciones.
+                    Módulo de cotizaciones.
                 </p>
             </section>
 
@@ -641,7 +641,7 @@ const DASHBOARD_HTML = `
                 </h2>
 
                 <p>
-                    MÃ³dulo de seguimientos.
+                    Módulo de seguimientos.
                 </p>
             </section>
 
@@ -660,7 +660,7 @@ const DASHBOARD_HTML = `
                 </h2>
 
                 <p>
-                    MÃ³dulo de ventas.
+                    Módulo de ventas.
                 </p>
             </section>
 
@@ -671,7 +671,7 @@ const DASHBOARD_HTML = `
                 hidden
             >
                 <span class="crm-page-eyebrow">
-                    OPERACIÃ“N
+                    OPERACIÓN
                 </span>
 
                 <h2>
@@ -679,7 +679,7 @@ const DASHBOARD_HTML = `
                 </h2>
 
                 <p>
-                    MÃ³dulo de viajes.
+                    Módulo de viajes.
                 </p>
             </section>
 
@@ -690,15 +690,15 @@ const DASHBOARD_HTML = `
                 hidden
             >
                 <span class="crm-page-eyebrow">
-                    OPERACIÃ“N
+                    OPERACIÓN
                 </span>
 
                 <h2>
-                    CampaÃ±as
+                    Campañas
                 </h2>
 
                 <p>
-                    MÃ³dulo de campaÃ±as.
+                    Módulo de campañas.
                 </p>
             </section>
 
@@ -709,7 +709,7 @@ const DASHBOARD_HTML = `
                 hidden
             >
                 <span class="crm-page-eyebrow">
-                    ANÃLISIS
+                    ANÁLISIS
                 </span>
 
                 <h2>
@@ -717,7 +717,7 @@ const DASHBOARD_HTML = `
                 </h2>
 
                 <p>
-                    MÃ³dulo de reportes.
+                    Módulo de reportes.
                 </p>
             </section>
 
@@ -732,11 +732,11 @@ const DASHBOARD_HTML = `
                 </span>
 
                 <h2>
-                    ConfiguraciÃ³n
+                    Configuración
                 </h2>
 
                 <p>
-                    ConfiguraciÃ³n del CRM.
+                    Configuración del CRM.
                 </p>
             </section>
 
@@ -768,7 +768,7 @@ export function renderDashboard() {
 
 
 // =========================================================
-// NAVEGACIÃ“N
+// NAVEGACIÓN
 // =========================================================
 
 function configurarNavegacion() {
@@ -816,13 +816,13 @@ function configurarNavegacion() {
 
 
 // =========================================================
-// MOSTRAR MÃ“DULO
+// MOSTRAR MÓDULO
 // =========================================================
 
 function mostrarModulo(module) {
 
     // ========================================================
-    // NAVEGACIÃ“N ACTIVA Y TÃTULO
+    // NAVEGACIÓN ACTIVA Y TÍTULO
     // ========================================================
 
     const navItems =
@@ -894,7 +894,7 @@ function mostrarModulo(module) {
 
 
     // ========================================================
-    // MÃ“DULOS QUE TODAVÃA SON PLACEHOLDER
+    // MÓDULOS QUE TODAVÍA SON PLACEHOLDER
     // ========================================================
 
     const modules =
@@ -927,7 +927,7 @@ function mostrarModulo(module) {
 }
 
 // =========================================================
-// NOMBRE DEL MÃ“DULO
+// NOMBRE DEL MÓDULO
 // =========================================================
 
 function obtenerNombreModulo(module) {
@@ -942,9 +942,9 @@ function obtenerNombreModulo(module) {
         seguimientos: "Seguimientos",
         ventas: "Ventas",
         viajes: "Viajes",
-        campanas: "CampaÃ±as",
+        campanas: "Campañas",
         reportes: "Reportes",
-        configuracion: "ConfiguraciÃ³n"
+        configuracion: "Configuración"
 
     };
 
@@ -953,7 +953,7 @@ function obtenerNombreModulo(module) {
 
 
 // =========================================================
-// MENÃš MÃ“VIL
+// MENÚ MÓVIL
 // =========================================================
 
 function configurarMenuMovil() {
@@ -985,7 +985,7 @@ function configurarMenuMovil() {
 }
 
 // =========================================================
-// CONFIGURACIÃ“N DEL USUARIO
+// CONFIGURACIÓN DEL USUARIO
 // =========================================================
 
 function configurarUsuario() {
@@ -1006,7 +1006,7 @@ function configurarUsuario() {
 
             if (error) {
                 console.error(
-                    "Error cerrando sesiÃ³n:",
+                    "Error cerrando sesión:",
                     error
                 );
             }
@@ -1015,7 +1015,7 @@ function configurarUsuario() {
 }
 
 // =========================================================
-// INFORMACIÃ“N DEL USUARIO
+// INFORMACIÓN DEL USUARIO
 // =========================================================
 
 function cargarInformacionUsuario() {
@@ -1063,7 +1063,7 @@ function cargarInformacionUsuario() {
 }
 
 // =========================================================
-// MÃ‰TRICAS DEL DASHBOARD
+// MÉTRICAS DEL DASHBOARD
 // =========================================================
 
 async function cargarMetricas() {
@@ -1095,11 +1095,11 @@ async function cargarMetricas() {
         if (error) {
 
             console.error(
-                `Error cargando mÃ©trica ${table}:`,
+                `Error cargando métrica ${table}:`,
                 error
             );
 
-            elemento.textContent = "â€”";
+            elemento.textContent = "—";
             continue;
         }
 
