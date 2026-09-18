@@ -3504,3 +3504,435 @@ body {
 .crm-contacts-table + * {
     max-width: 100%;
 }
+
+/* =========================================================
+   MENU DE USUARIO
+   ========================================================= */
+
+.crm-user {
+    position: relative;
+}
+
+.crm-user-menu {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--crm-text-secondary);
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.crm-user-menu:hover {
+    background: var(--crm-primary-light);
+    color: var(--crm-primary);
+}
+
+.crm-user-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 190px;
+    padding: 8px;
+    background: #ffffff;
+    border: 1px solid var(--crm-border);
+    border-radius: 12px;
+    box-shadow: 0 14px 35px rgba(15, 35, 52, 0.14);
+    display: none;
+    z-index: 1000;
+}
+
+.crm-user-dropdown.is-open {
+    display: block;
+}
+
+.crm-user-dropdown-item {
+    width: 100%;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    padding: 11px 12px;
+    text-align: left;
+    cursor: pointer;
+    color: var(--crm-danger);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.crm-user-dropdown-item:hover {
+    background: #fff4f4;
+}
+
+
+/* =========================================================
+   CRM LOGIN - DISEÑO GALERÍA DE VIAJES
+   Agregar al final de crm/css/crm.css
+   ========================================================= */
+
+.crm-auth-page,
+body.crm-auth-page,
+body:has(.crm-auth-page) {
+    min-height: 100vh;
+}
+
+body.crm-auth-page {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 39, 68, 0.68) 0%,
+            rgba(7, 39, 68, 0.42) 38%,
+            rgba(7, 39, 68, 0.18) 100%
+        ),
+        url("/crm/login-bg.png") center center / cover no-repeat fixed;
+}
+
+/* Si la clase de página actual es .crm-auth en vez de .crm-auth-page */
+body:has(.crm-auth) {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 39, 68, 0.68) 0%,
+            rgba(7, 39, 68, 0.42) 38%,
+            rgba(7, 39, 68, 0.18) 100%
+        ),
+        url("/crm/login-bg.png") center center / cover no-repeat fixed;
+}
+
+.crm-auth-page .crm-auth-container,
+body:has(.crm-auth) .crm-auth {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    box-sizing: border-box;
+}
+
+/* Tarjeta centrada */
+.crm-auth-page .crm-auth-card,
+body:has(.crm-auth) .crm-auth-card {
+    width: min(556px, calc(100vw - 48px));
+    min-height: 760px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 38px 48px 34px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    box-shadow:
+        0 24px 70px rgba(4, 27, 47, 0.28),
+        0 4px 18px rgba(4, 27, 47, 0.12);
+}
+
+/* Marca centrada */
+.crm-auth-page .crm-auth-brand,
+body:has(.crm-auth) .crm-auth-brand {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    margin-bottom: 34px;
+}
+
+.crm-auth-page .crm-auth-logo,
+body:has(.crm-auth) .crm-auth-logo {
+    width: 178px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 4px;
+}
+
+.crm-auth-page .crm-auth-logo img,
+body:has(.crm-auth) .crm-auth-logo img {
+    display: block;
+    width: 178px;
+    height: auto;
+    max-height: 105px;
+    object-fit: contain;
+}
+
+.crm-auth-page .crm-auth-brand-name,
+body:has(.crm-auth) .crm-auth-brand-name {
+    display: block;
+    color: #123f61;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    font-weight: 800;
+}
+
+.crm-auth-page .crm-auth-brand-subtitle,
+body:has(.crm-auth) .crm-auth-brand-subtitle {
+    display: block;
+    margin-top: 8px;
+    color: #c6972e;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.38em;
+}
+
+/* Cabecera */
+.crm-auth-page .crm-auth-header,
+body:has(.crm-auth) .crm-auth-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.crm-auth-page .crm-auth-eyebrow,
+body:has(.crm-auth) .crm-auth-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #c6972e;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.crm-auth-page .crm-auth-header h1,
+body:has(.crm-auth) .crm-auth-header h1 {
+    margin: 0 0 10px;
+    color: #123f61;
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.crm-auth-page .crm-auth-header p,
+body:has(.crm-auth) .crm-auth-header p {
+    margin: 0 auto;
+    max-width: 410px;
+    color: #73849a;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Campos */
+.crm-auth-page .crm-auth-form,
+body:has(.crm-auth) .crm-auth-form {
+    width: 100%;
+}
+
+.crm-auth-page .crm-form-field,
+body:has(.crm-auth) .crm-form-field {
+    margin-bottom: 22px;
+}
+
+.crm-auth-page .crm-form-field label,
+body:has(.crm-auth) .crm-form-field label {
+    display: block;
+    margin-bottom: 9px;
+    color: #162d42;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.crm-auth-page .crm-form-field input,
+body:has(.crm-auth) .crm-form-field input {
+    width: 100%;
+    height: 54px;
+    box-sizing: border-box;
+    padding: 0 17px;
+    border: 1px solid #d8e0e8;
+    border-radius: 10px;
+    background: #fff;
+    color: #173b59;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.crm-auth-page .crm-form-field input::placeholder,
+body:has(.crm-auth) .crm-form-field input::placeholder {
+    color: #a0adbd;
+}
+
+.crm-auth-page .crm-form-field input:focus,
+body:has(.crm-auth) .crm-form-field input:focus {
+    border-color: #1c5279;
+    box-shadow: 0 0 0 3px rgba(28, 82, 121, 0.10);
+}
+
+/* Botón */
+.crm-auth-page .crm-auth-button,
+body:has(.crm-auth) .crm-auth-button {
+    width: 100%;
+    min-height: 56px;
+    margin-top: 2px;
+    border: 0;
+    border-radius: 10px;
+    background: #123f61;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(18, 63, 97, 0.16);
+    transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.crm-auth-page .crm-auth-button:hover,
+body:has(.crm-auth) .crm-auth-button:hover {
+    background: #0d334f;
+    transform: translateY(-1px);
+    box-shadow: 0 11px 24px rgba(18, 63, 97, 0.22);
+}
+
+.crm-auth-page .crm-auth-button:disabled,
+body:has(.crm-auth) .crm-auth-button:disabled {
+    opacity: .65;
+    cursor: wait;
+    transform: none;
+}
+
+/* Mensaje de error */
+.crm-auth-page .crm-auth-message,
+body:has(.crm-auth) .crm-auth-message {
+    margin: -4px 0 16px;
+    border-radius: 9px;
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+/* Recuperación */
+.crm-auth-page .crm-auth-footer,
+body:has(.crm-auth) .crm-auth-footer {
+    margin-top: 22px;
+    text-align: center;
+}
+
+.crm-auth-page .crm-auth-footer a,
+body:has(.crm-auth) .crm-auth-footer a {
+    color: #0b86d7;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.crm-auth-page .crm-auth-footer a:hover,
+body:has(.crm-auth) .crm-auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Decoración inferior */
+.crm-auth-page .crm-auth-card::after,
+body:has(.crm-auth) .crm-auth-card::after {
+    content: "MÁS QUE VIAJES, MEJORES HISTORIAS";
+    display: block;
+    margin: 34px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid #e3e7ec;
+    width: 100%;
+    color: #7f8da0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    body.crm-auth-page,
+    body:has(.crm-auth) {
+        background:
+            linear-gradient(
+                rgba(7, 39, 68, 0.72),
+                rgba(7, 39, 68, 0.72)
+            ),
+            url("/crm/login-bg.png") center center / cover no-repeat fixed;
+    }
+
+    .crm-auth-page .crm-auth-container,
+    body:has(.crm-auth) .crm-auth {
+        padding: 22px 16px;
+    }
+
+    .crm-auth-page .crm-auth-card,
+    body:has(.crm-auth) .crm-auth-card {
+        min-height: auto;
+        padding: 32px 28px 30px;
+    }
+}
+
+@media (max-width: 520px) {
+    .crm-auth-page .crm-auth-card,
+    body:has(.crm-auth) .crm-auth-card {
+        width: calc(100vw - 24px);
+        padding: 28px 22px 26px;
+        border-radius: 14px;
+    }
+
+    .crm-auth-page .crm-auth-header h1,
+    body:has(.crm-auth) .crm-auth-header h1 {
+        font-size: 32px;
+    }
+
+    .crm-auth-page .crm-auth-logo img,
+    body:has(.crm-auth) .crm-auth-logo img {
+        width: 150px;
+    }
+}
+
+/* =========================================================
+   LIMPIEZA DE ICONOS TEMPORALES DEL CRM
+   ========================================================= */
+
+.crm-nav-icon {
+    font-size: 0 !important;
+    width: 20px;
+    min-width: 20px;
+}
+
+.crm-nav-icon::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: auto;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.65;
+}
+
+.crm-stat-icon {
+    font-size: 0 !important;
+}
+
+.crm-stat-icon::before {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.65;
+}

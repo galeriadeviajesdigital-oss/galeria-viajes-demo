@@ -28,6 +28,11 @@
         href="css/style.css"
     >
 
+    <link
+        rel="stylesheet"
+        href="css/public-quote.css"
+    >
+
     <!-- =========================
          GOOGLE FONTS
     ========================== -->
@@ -1045,6 +1050,43 @@
 </section>
 
 
+
+<!-- =====================================================
+     FORMULARIO PÚBLICO DE COTIZACIÓN
+====================================================== -->
+
+<div class="public-quote-modal" id="publicQuoteModal" hidden>
+    <div class="public-quote-backdrop" data-close-quote></div>
+    <div class="public-quote-dialog" role="dialog" aria-modal="true" aria-labelledby="publicQuoteTitle">
+        <button type="button" class="public-quote-close" data-close-quote aria-label="Cerrar">×</button>
+        <span class="eyebrow dark">PLANIFICA TU VIAJE</span>
+        <h2 id="publicQuoteTitle">Cuéntanos qué viaje estás buscando</h2>
+        <p>Completa estos datos y nuestro equipo te contactará para preparar una propuesta personalizada.</p>
+        <form id="publicQuoteForm">
+            <div class="public-quote-grid">
+                <label>Nombre *<input id="quoteNombre" required maxlength="100"></label>
+                <label>Apellido<input id="quoteApellido" maxlength="100"></label>
+                <label>Correo electrónico *<input id="quoteEmail" type="email" required maxlength="255"></label>
+                <label>Teléfono<input id="quoteTelefono" maxlength="50"></label>
+                <label>WhatsApp<input id="quoteWhatsapp" maxlength="50"></label>
+                <label>Destino<select id="quoteDestino"><option value="">Seleccionar destino...</option></select></label>
+                <label>Experiencia<select id="quoteExperiencia"><option value="">Seleccionar experiencia...</option></select></label>
+                <label>Viaje<select id="quoteViaje"><option value="">Seleccionar viaje...</option></select></label>
+                <label>Fecha de salida<input id="quoteFechaSalida" type="date"></label>
+                <label>Fecha de regreso<input id="quoteFechaRegreso" type="date"></label>
+                <label>Adultos<input id="quoteAdultos" type="number" min="1" value="1" required></label>
+                <label>Niños<input id="quoteNinos" type="number" min="0" value="0"></label>
+                <label>Presupuesto mínimo<input id="quotePresupuestoMin" type="number" min="0" step="0.01"></label>
+                <label>Presupuesto máximo<input id="quotePresupuestoMax" type="number" min="0" step="0.01"></label>
+                <label>Moneda<select id="quoteMoneda"><option>USD</option><option>CRC</option><option>EUR</option></select></label>
+            </div>
+            <label>Comentarios<textarea id="quoteComentarios" rows="4" maxlength="3000" placeholder="Cuéntanos fechas, preferencias o cualquier detalle importante..."></textarea></label>
+            <label class="public-quote-consent"><input id="quoteAcepta" type="checkbox"> Deseo recibir comunicaciones relacionadas con mi solicitud.</label>
+            <div id="publicQuoteMessage" class="public-quote-message" role="status"></div>
+            <div class="public-quote-actions"><button type="button" class="btn btn-secondary" data-close-quote>Cancelar</button><button type="submit" class="btn btn-primary" id="publicQuoteSubmit">Enviar solicitud</button></div>
+        </form>
+    </div>
+</div>
 
 <!-- =====================================================
      POR QUÉ GALERÍA DE VIAJES

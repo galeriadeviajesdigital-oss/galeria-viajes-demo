@@ -1,0 +1,427 @@
+/* =========================================================
+   GALERÍA DE VIAJES
+   CRM - PANTALLA DE LOGIN
+   ========================================================= */
+
+body.crm-auth-page {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(4, 34, 59, 0.18),
+            rgba(4, 34, 59, 0.08)
+        ),
+        url("/crm/login-bg.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.crm-auth-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.crm-auth-card {
+    width: min(540px, 100%);
+
+    box-sizing: border-box;
+
+    padding: 42px 48px 34px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 32, 55, 0.30),
+        0 8px 24px rgba(0, 32, 55, 0.15);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.crm-auth-brand {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.crm-auth-logo {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 220px;
+    height: 118px;
+
+    margin-bottom: 8px;
+
+    background: #123f61;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 20px rgba(18, 63, 97, 0.12);
+}
+
+.crm-auth-logo img {
+    display: block;
+
+    width: 205px;
+    height: auto;
+
+    max-height: 112px;
+
+    object-fit: contain;
+}
+
+
+/* No necesitamos duplicar el nombre si el logo ya lo contiene */
+
+.crm-auth-brand-name {
+    display: none;
+}
+
+.crm-auth-brand-subtitle {
+    display: block;
+
+    color: #c6972e;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.42em;
+
+    margin-left: 0.42em;
+}
+
+
+/* =========================================================
+   CABECERA
+   ========================================================= */
+
+.crm-auth-header {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.crm-auth-eyebrow {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #c6972e;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+.crm-auth-header h1 {
+    margin: 0 0 10px;
+
+    color: #103f62;
+
+    font-size: 38px;
+    line-height: 1.1;
+
+    font-weight: 800;
+}
+
+.crm-auth-header p {
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    color: #73849a;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.crm-auth-form {
+    width: 100%;
+}
+
+.crm-form-field {
+    margin-bottom: 21px;
+}
+
+.crm-form-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #162d42;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.crm-form-field input {
+    width: 100%;
+    height: 54px;
+
+    box-sizing: border-box;
+
+    padding: 0 16px;
+
+    border: 1px solid #d7e0e8;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #173b59;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.crm-form-field input::placeholder {
+    color: #a0adbd;
+}
+
+.crm-form-field input:focus {
+    border-color: #1b537b;
+
+    box-shadow:
+        0 0 0 3px rgba(27, 83, 123, 0.10);
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.crm-auth-message {
+    margin-bottom: 16px;
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BOTÓN
+   ========================================================= */
+
+.crm-auth-button {
+    width: 100%;
+    min-height: 56px;
+
+    margin-top: 2px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: #123f61;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(18, 63, 97, 0.18);
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.crm-auth-button:hover {
+    background: #0d334f;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 12px 26px rgba(18, 63, 97, 0.24);
+}
+
+.crm-auth-button:active {
+    transform: translateY(0);
+}
+
+.crm-auth-button:disabled {
+    opacity: 0.65;
+
+    cursor: wait;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   RECUPERACIÓN
+   ========================================================= */
+
+.crm-auth-footer {
+    margin-top: 22px;
+
+    text-align: center;
+}
+
+.crm-auth-footer a {
+    color: #0787d4;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.crm-auth-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   PIE DE TARJETA
+   ========================================================= */
+
+.crm-auth-card::after {
+    content: "MÁS QUE VIAJES, MEJORES HISTORIAS";
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 32px;
+    padding-top: 17px;
+
+    border-top: 1px solid #e2e7ec;
+
+    color: #8290a1;
+
+    text-align: center;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    body.crm-auth-page {
+        background-position: center center;
+        background-attachment: scroll;
+    }
+
+    .crm-auth-container {
+        padding: 24px 18px;
+    }
+
+    .crm-auth-card {
+        width: min(520px, 100%);
+
+        padding: 36px 32px 30px;
+    }
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .crm-auth-container {
+        padding: 16px 12px;
+    }
+
+    .crm-auth-card {
+        width: 100%;
+
+        padding: 30px 22px 26px;
+
+        border-radius: 14px;
+    }
+
+    .crm-auth-logo {
+        width: 160px;
+        height: 90px;
+    }
+
+    .crm-auth-logo img {
+        width: 160px;
+    }
+
+    .crm-auth-header h1 {
+        font-size: 32px;
+    }
+
+    .crm-auth-header p {
+        font-size: 14px;
+    }
+}

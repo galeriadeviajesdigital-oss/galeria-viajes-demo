@@ -2,9 +2,10 @@
 import { supabase } from "./auth.js";
 import { renderContactos } from "./contactos.js";
 import { renderLeads } from "./leads.js";
+import { renderModuloCRM } from "./modulos.js";
 
 // =========================================================
-// CRM GALERÍA DE VIAJES
+// CRM GALER•A DE VIAJES
 // Dashboard y estructura principal
 // =========================================================
 
@@ -26,7 +27,7 @@ const DASHBOARD_HTML = `
         aria-label="Galería de Viajes"
     >
         <img
-    src="/assets/logo-B5DZdpEy.png"
+    src="/crm/logo.png"
     alt="Galería de Viajes"
     class="crm-sidebar-logo-image"
 >
@@ -51,7 +52,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item active"
                     data-module="dashboard"
                 >
-                    <span class="crm-nav-icon">⌂</span>
+                    <span class="crm-nav-icon">•</span>
                     <span>Dashboard</span>
                 </button>
             </div>
@@ -67,7 +68,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="contactos"
                 >
-                    <span class="crm-nav-icon">♙</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Contactos</span>
                 </button>
 
@@ -75,7 +76,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="leads"
                 >
-                    <span class="crm-nav-icon">◎</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Leads</span>
                 </button>
 
@@ -83,7 +84,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="oportunidades"
                 >
-                    <span class="crm-nav-icon">◇</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Oportunidades</span>
                 </button>
 
@@ -100,7 +101,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="cotizaciones"
                 >
-                    <span class="crm-nav-icon">▤</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Cotizaciones</span>
                 </button>
 
@@ -108,7 +109,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="seguimientos"
                 >
-                    <span class="crm-nav-icon">◷</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Seguimientos</span>
                 </button>
 
@@ -116,7 +117,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="ventas"
                 >
-                    <span class="crm-nav-icon">▣</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Ventas</span>
                 </button>
 
@@ -133,7 +134,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="viajes"
                 >
-                    <span class="crm-nav-icon">✈</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Viajes</span>
                 </button>
 
@@ -141,7 +142,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="campanas"
                 >
-                    <span class="crm-nav-icon">◇</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Campañas</span>
                 </button>
 
@@ -158,7 +159,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="reportes"
                 >
-                    <span class="crm-nav-icon">▥</span>
+                    <span class="crm-nav-icon">?</span>
                     <span>Reportes</span>
                 </button>
 
@@ -173,7 +174,7 @@ const DASHBOARD_HTML = `
                 class="crm-nav-item"
                 data-module="configuracion"
             >
-                <span class="crm-nav-icon">⚙</span>
+                <span class="crm-nav-icon">?</span>
                 <span>Configuración</span>
             </button>
 
@@ -199,7 +200,7 @@ const DASHBOARD_HTML = `
                     class="crm-menu-toggle"
                     aria-label="Abrir menú"
                 >
-                    ☰
+                    ?
                 </button>
 
                 <div>
@@ -221,7 +222,7 @@ const DASHBOARD_HTML = `
                     class="crm-notification-button"
                     aria-label="Notificaciones"
                 >
-                    ♢
+                    ?
                     <span class="crm-notification-dot"></span>
                 </button>
 
@@ -250,9 +251,9 @@ const DASHBOARD_HTML = `
                     <button
                         id="crmUserMenu"
                         class="crm-user-menu"
-                        aria-label="Menú de usuario"
+                        aria-label="Men• de usuario"
                     >
-                        ▾
+                        ?
                     </button>
 
                 </div>
@@ -304,11 +305,11 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Leads</span>
-                            <span class="crm-stat-icon">◎</span>
+                            <span class="crm-stat-icon">?</span>
                         </div>
 
                         <strong id="statLeads">
-                            —
+                            •
                         </strong>
 
                         <small>
@@ -322,11 +323,11 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Oportunidades</span>
-                            <span class="crm-stat-icon">◇</span>
+                            <span class="crm-stat-icon">?</span>
                         </div>
 
                         <strong id="statOportunidades">
-                            —
+                            •
                         </strong>
 
                         <small>
@@ -340,11 +341,11 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Cotizaciones</span>
-                            <span class="crm-stat-icon">▤</span>
+                            <span class="crm-stat-icon">?</span>
                         </div>
 
                         <strong id="statCotizaciones">
-                            —
+                            •
                         </strong>
 
                         <small>
@@ -358,11 +359,11 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Ventas</span>
-                            <span class="crm-stat-icon">▣</span>
+                            <span class="crm-stat-icon">?</span>
                         </div>
 
                         <strong id="statVentas">
-                            —
+                            •
                         </strong>
 
                         <small>
@@ -414,7 +415,7 @@ const DASHBOARD_HTML = `
                                 </span>
 
                                 <strong>
-                                    —
+                                    •
                                 </strong>
 
                             </div>
@@ -427,7 +428,7 @@ const DASHBOARD_HTML = `
                                 </span>
 
                                 <strong>
-                                    —
+                                    •
                                 </strong>
 
                             </div>
@@ -440,7 +441,7 @@ const DASHBOARD_HTML = `
                                 </span>
 
                                 <strong>
-                                    —
+                                    •
                                 </strong>
 
                             </div>
@@ -453,7 +454,7 @@ const DASHBOARD_HTML = `
                                 </span>
 
                                 <strong>
-                                    —
+                                    •
                                 </strong>
 
                             </div>
@@ -486,7 +487,7 @@ const DASHBOARD_HTML = `
                         >
 
                             <div class="crm-empty-icon">
-                                ◷
+                                ?
                             </div>
 
                             <strong>
@@ -530,7 +531,7 @@ const DASHBOARD_HTML = `
                     >
 
                         <div class="crm-empty-icon">
-                            ◷
+                            ?
                         </div>
 
                         <strong>
@@ -764,6 +765,9 @@ export function renderDashboard() {
     cargarInformacionUsuario();
 
     cargarMetricas();
+    cargarPipelineDashboard();
+    cargarSeguimientosDashboard();
+    cargarActividadDashboard();
 }
 
 
@@ -894,7 +898,16 @@ function mostrarModulo(module) {
 
 
     // ========================================================
-    // MÓDULOS QUE TODAVÍA SON PLACEHOLDER
+    // MÓDULOS CRM
+    // ========================================================
+
+    if (renderModuloCRM(module)) {
+        return;
+    }
+
+
+    // ========================================================
+    // MÓDULOS QUE TODAV•A SON PLACEHOLDER
     // ========================================================
 
     const modules =
@@ -990,28 +1003,66 @@ function configurarMenuMovil() {
 
 function configurarUsuario() {
 
+    document.body.classList.remove("crm-auth-page");
+
+
     const userMenu =
         document.getElementById("crmUserMenu");
 
-    if (!userMenu) {
+    const userContainer =
+        document.querySelector(".crm-user");
+
+    if (!userMenu || !userContainer) {
         return;
     }
 
-    userMenu.addEventListener(
-        "click",
-        async () => {
+    const menu = document.createElement("div");
+    menu.className = "crm-user-dropdown";
+    menu.innerHTML = `
+        <button
+            type="button"
+            class="crm-user-dropdown-item"
+            id="crmLogoutButton"
+        >
+            Cerrar sesión
+        </button>
+    `;
+    userContainer.appendChild(menu);
 
-            const { error } =
-                await supabase.auth.signOut();
+    userMenu.addEventListener("click", event => {
+        event.stopPropagation();
+        menu.classList.toggle("is-open");
+    });
 
-            if (error) {
-                console.error(
-                    "Error cerrando sesión:",
-                    error
-                );
-            }
+    document.addEventListener("click", event => {
+        if (!userContainer.contains(event.target)) {
+            menu.classList.remove("is-open");
         }
-    );
+    });
+
+    document.getElementById("crmLogoutButton")?.addEventListener("click", async () => {
+        const button = document.getElementById("crmLogoutButton");
+        if (button) {
+            button.disabled = true;
+            button.textContent = "Cerrando sesión...";
+        }
+
+        const { error } = await supabase.auth.signOut();
+
+        if (error) {
+            console.error("Error cerrando sesión:", error);
+            if (button) {
+                button.disabled = false;
+                button.textContent = "Cerrar sesión";
+            }
+            return;
+        }
+
+        window.crm.usuario = null;
+        window.crm.perfil = null;
+        window.crm.rol = null;
+        window.location.href = "./";
+    });
 }
 
 // =========================================================
@@ -1060,7 +1111,56 @@ function cargarInformacionUsuario() {
         avatar.textContent =
             texto;
     }
+
+    const dropdownName = document.getElementById("crmUserDropdownName");
+    const dropdownRole = document.getElementById("crmUserDropdownRole");
+    if (dropdownName) dropdownName.textContent = user?.email || "Usuario";
+    if (dropdownRole) dropdownRole.textContent = perfil?.rol || "CRM";
 }
+
+
+
+async function cargarPipelineDashboard() {
+    const container=document.getElementById("crmPipeline");
+    if(!container)return;
+    const {data,error}=await supabase.from("oportunidades").select("etapa");
+    if(error){console.error("Error cargando pipeline:",error);return;}
+    const counts={NUEVA:0,CONTACTADA:0,CALIFICADA:0,COTIZACION:0,NEGOCIACION:0,SEGUIMIENTO:0,GANADA:0,PERDIDA:0};
+    (data||[]).forEach(x=>{if(counts[x.etapa]!==undefined)counts[x.etapa]++;});
+    const stages=[ ["Nuevas",counts.NUEVA],["En proceso",counts.CONTACTADA+counts.CALIFICADA+counts.NEGOCIACION+counts.SEGUIMIENTO],["Cotización",counts.COTIZACION],["Cerradas",counts.GANADA+counts.PERDIDA] ];
+    container.innerHTML=stages.map(([label,value])=>`<div class="crm-pipeline-stage"><span>${label}</span><strong>${value}</strong></div>`).join("");
+}
+
+async function cargarSeguimientosDashboard() {
+    const container=document.getElementById("crmFollowups"); if(!container)return;
+    const {data,error}=await supabase.from("seguimientos").select("id,tipo,asunto,fecha_programada,completado").eq("completado",false).not("fecha_programada","is",null).order("fecha_programada",{ascending:true}).limit(5);
+    if(error){console.error("Error cargando seguimientos:",error);return;}
+    if(!(data||[]).length){container.innerHTML=`<div class="crm-empty-icon">?</div><strong>Sin seguimientos cargados</strong><p>Aquí aparecerán las próximas actividades comerciales.</p>`;return;}
+    container.className="crm-followup-list";
+    container.innerHTML=data.map(x=>`<div class="crm-followup-item"><div><strong>${escapeDashboard(x.asunto||x.tipo)}</strong><span>${new Date(x.fecha_programada).toLocaleString("es-CR")}</span></div><span>${escapeDashboard(x.tipo)}</span></div>`).join("");
+}
+
+async function cargarActividadDashboard() {
+    const container=document.getElementById("crmRecentActivity"); if(!container)return;
+    const [leads,oportunidades,cotizaciones,ventas]=await Promise.all([
+      supabase.from("leads").select("id,created_at,mensaje").order("created_at",{ascending:false}).limit(3),
+      supabase.from("oportunidades").select("id,created_at,nombre,etapa").order("created_at",{ascending:false}).limit(3),
+      supabase.from("cotizaciones").select("id,created_at,numero,total,moneda").order("created_at",{ascending:false}).limit(3),
+      supabase.from("ventas").select("id,created_at,numero,monto_total,moneda").order("created_at",{ascending:false}).limit(3)
+    ]);
+    const items=[];
+    (leads.data||[]).forEach(x=>items.push({date:x.created_at,text:`Nuevo lead` ,detail:x.mensaje||"Lead registrado"}));
+    (oportunidades.data||[]).forEach(x=>items.push({date:x.created_at,text:`Oportunidad: ${x.nombre}`,detail:x.etapa}));
+    (cotizaciones.data||[]).forEach(x=>items.push({date:x.created_at,text:`Cotización ${x.numero}`,detail:formatDashboardMoney(x.total,x.moneda)}));
+    (ventas.data||[]).forEach(x=>items.push({date:x.created_at,text:`Venta ${x.numero}`,detail:formatDashboardMoney(x.monto_total,x.moneda)}));
+    items.sort((a,b)=>new Date(b.date)-new Date(a.date));
+    const top=items.slice(0,8);
+    if(!top.length){container.innerHTML=`<div class="crm-empty-icon">?</div><strong>No hay actividad reciente</strong><p>Las actividades del CRM aparecerán en esta sección.</p>`;return;}
+    container.className="crm-activity-list";
+    container.innerHTML=top.map(x=>`<div class="crm-activity-item"><div><strong>${escapeDashboard(x.text)}</strong><span>${escapeDashboard(x.detail)}</span></div><time>${new Date(x.date).toLocaleString("es-CR")}</time></div>`).join("");
+}
+function escapeDashboard(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function formatDashboardMoney(v,c="USD"){if(v==null)return "•";try{return new Intl.NumberFormat("es-CR",{style:"currency",currency:c||"USD"}).format(Number(v));}catch{return String(v);}}
 
 // =========================================================
 // MÉTRICAS DEL DASHBOARD
@@ -1095,11 +1195,11 @@ async function cargarMetricas() {
         if (error) {
 
             console.error(
-                `Error cargando métrica ${table}:`,
+                `Error cargando m•trica ${table}:`,
                 error
             );
 
-            elemento.textContent = "—";
+            elemento.textContent = "•";
             continue;
         }
 

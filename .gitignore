@@ -26,3 +26,4 @@ dist/
 # Material de referencia / scraping local
 tools/*.html
 tools/*.txt
+README-IMPLEMENTACION.txt

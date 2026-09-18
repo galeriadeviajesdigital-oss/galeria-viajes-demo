@@ -3277,6 +3277,13 @@ function configurarNuevoLead() {
         }
     );
 
+    document
+        .getElementById("guardarNuevoLead")
+        ?.addEventListener(
+            "click",
+            guardarNuevoLead
+        );
+
 }
 
 // ============================================================
@@ -3854,19 +3861,4 @@ async function guardarNuevoLead() {
 
 
 
-function configurarNuevoLead() {
-
-    // cerrar X
-    // cancelar
-    // clic fuera
-    // ESC
-
-    document
-        .getElementById("guardarNuevoLead")
-        ?.addEventListener(
-            "click",
-            guardarNuevoLead
-        );
-
-}
 }
