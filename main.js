@@ -3506,6 +3506,7 @@ function configurarFormularioCotizacion() {
     const modal = document.getElementById("publicQuoteModal");
     const form = document.getElementById("publicQuoteForm");
     const start = document.getElementById("startPlannerBtn");
+    const footerQuote = document.getElementById("footerQuoteLink");
     if (!modal || !form) return;
 
     const close = () => { modal.hidden = true; document.body.classList.remove("quote-modal-open"); };
@@ -3521,6 +3522,11 @@ function configurarFormularioCotizacion() {
     };
 
     start?.addEventListener("click", event => { event.preventDefault(); open(); });
+
+    footerQuote?.addEventListener("click", event => {
+        event.preventDefault();
+        open();
+    });
     modal.querySelectorAll("[data-close-quote]").forEach(el => el.addEventListener("click", close));
     document.addEventListener("keydown", event => { if (event.key === "Escape" && !modal.hidden) close(); });
     form.addEventListener("submit", async event => { event.preventDefault(); await enviarSolicitudCotizacion(close); });
