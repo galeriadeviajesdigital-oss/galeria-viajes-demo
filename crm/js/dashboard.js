@@ -68,7 +68,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="contactos"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Contactos</span>
                 </button>
 
@@ -76,7 +76,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="leads"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Leads</span>
                 </button>
 
@@ -84,7 +84,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="oportunidades"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Oportunidades</span>
                 </button>
 
@@ -101,7 +101,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="cotizaciones"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Cotizaciones</span>
                 </button>
 
@@ -109,7 +109,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="seguimientos"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Seguimientos</span>
                 </button>
 
@@ -117,7 +117,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="ventas"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Ventas</span>
                 </button>
 
@@ -134,7 +134,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="viajes"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Viajes</span>
                 </button>
 
@@ -142,7 +142,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="campanas"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Campañas</span>
                 </button>
 
@@ -159,7 +159,7 @@ const DASHBOARD_HTML = `
                     class="crm-nav-item"
                     data-module="reportes"
                 >
-                    <span class="crm-nav-icon">?</span>
+                    <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                     <span>Reportes</span>
                 </button>
 
@@ -174,7 +174,7 @@ const DASHBOARD_HTML = `
                 class="crm-nav-item"
                 data-module="configuracion"
             >
-                <span class="crm-nav-icon">?</span>
+                <span class="crm-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg></span>
                 <span>Configuración</span>
             </button>
 
@@ -200,7 +200,9 @@ const DASHBOARD_HTML = `
                     class="crm-menu-toggle"
                     aria-label="Abrir menú"
                 >
-                    ?
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
 
                 <div>
@@ -222,7 +224,10 @@ const DASHBOARD_HTML = `
                     class="crm-notification-button"
                     aria-label="Notificaciones"
                 >
-                    ?
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+                        <path d="M10 21h4"></path>
+                    </svg>
                     <span class="crm-notification-dot"></span>
                 </button>
 
@@ -253,7 +258,9 @@ const DASHBOARD_HTML = `
                         class="crm-user-menu"
                         aria-label="Men• de usuario"
                     >
-                        ?
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m7 10 5 5 5-5"></path>
+                        </svg>
                     </button>
 
                 </div>
@@ -305,7 +312,7 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Leads</span>
-                            <span class="crm-stat-icon">?</span>
+                            <span class="crm-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"></path><path d="m7 15 4-4 3 2 5-6"></path></svg></span>
                         </div>
 
                         <strong id="statLeads">
@@ -323,7 +330,7 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Oportunidades</span>
-                            <span class="crm-stat-icon">?</span>
+                            <span class="crm-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"></path><path d="m7 15 4-4 3 2 5-6"></path></svg></span>
                         </div>
 
                         <strong id="statOportunidades">
@@ -341,7 +348,7 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Cotizaciones</span>
-                            <span class="crm-stat-icon">?</span>
+                            <span class="crm-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"></path><path d="m7 15 4-4 3 2 5-6"></path></svg></span>
                         </div>
 
                         <strong id="statCotizaciones">
@@ -359,7 +366,7 @@ const DASHBOARD_HTML = `
 
                         <div class="crm-stat-header">
                             <span>Ventas</span>
-                            <span class="crm-stat-icon">?</span>
+                            <span class="crm-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"></path><path d="m7 15 4-4 3 2 5-6"></path></svg></span>
                         </div>
 
                         <strong id="statVentas">
@@ -486,8 +493,11 @@ const DASHBOARD_HTML = `
                             class="crm-empty-state"
                         >
 
-                            <div class="crm-empty-icon">
-                                ?
+                            <div class="crm-empty-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 8v5M12 16h.01"></path>
+                                </svg>
                             </div>
 
                             <strong>
@@ -530,9 +540,12 @@ const DASHBOARD_HTML = `
                         class="crm-empty-state"
                     >
 
-                        <div class="crm-empty-icon">
-                            ?
-                        </div>
+                        <div class="crm-empty-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 8v5M12 16h.01"></path>
+                                </svg>
+                            </div>
 
                         <strong>
                             No hay actividad reciente
@@ -1135,7 +1148,7 @@ async function cargarSeguimientosDashboard() {
     const container=document.getElementById("crmFollowups"); if(!container)return;
     const {data,error}=await supabase.from("seguimientos").select("id,tipo,asunto,fecha_programada,completado").eq("completado",false).not("fecha_programada","is",null).order("fecha_programada",{ascending:true}).limit(5);
     if(error){console.error("Error cargando seguimientos:",error);return;}
-    if(!(data||[]).length){container.innerHTML=`<div class="crm-empty-icon">?</div><strong>Sin seguimientos cargados</strong><p>Aquí aparecerán las próximas actividades comerciales.</p>`;return;}
+    if(!(data||[]).length){container.innerHTML=`<div class="crm-empty-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg></div><strong>Sin seguimientos cargados</strong><p>Aquí aparecerán las próximas actividades comerciales.</p>`;return;}
     container.className="crm-followup-list";
     container.innerHTML=data.map(x=>`<div class="crm-followup-item"><div><strong>${escapeDashboard(x.asunto||x.tipo)}</strong><span>${new Date(x.fecha_programada).toLocaleString("es-CR")}</span></div><span>${escapeDashboard(x.tipo)}</span></div>`).join("");
 }
@@ -1155,7 +1168,7 @@ async function cargarActividadDashboard() {
     (ventas.data||[]).forEach(x=>items.push({date:x.created_at,text:`Venta ${x.numero}`,detail:formatDashboardMoney(x.monto_total,x.moneda)}));
     items.sort((a,b)=>new Date(b.date)-new Date(a.date));
     const top=items.slice(0,8);
-    if(!top.length){container.innerHTML=`<div class="crm-empty-icon">?</div><strong>No hay actividad reciente</strong><p>Las actividades del CRM aparecerán en esta sección.</p>`;return;}
+    if(!top.length){container.innerHTML=`<div class="crm-empty-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg></div><strong>No hay actividad reciente</strong><p>Las actividades del CRM aparecerán en esta sección.</p>`;return;}
     container.className="crm-activity-list";
     container.innerHTML=top.map(x=>`<div class="crm-activity-item"><div><strong>${escapeDashboard(x.text)}</strong><span>${escapeDashboard(x.detail)}</span></div><time>${new Date(x.date).toLocaleString("es-CR")}</time></div>`).join("");
 }
